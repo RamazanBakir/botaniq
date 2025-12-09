@@ -51,3 +51,7 @@ export type {
   TextareaProps,
   NumberInputProps,
 } from './forms';
+
+// Overlay components
+export { Modal } from './overlay';
+export type { ModalProps } from './overlay';

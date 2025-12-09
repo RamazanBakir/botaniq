@@ -2,22 +2,49 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useRouter } from '@/i18n/navigation';
 import { Link } from '@/i18n/navigation';
+import { useUser } from '@/contexts/UserContext';
+import { mockLogin } from '@/lib/mockAuth';
 
 export default function LoginPage() {
   const t = useTranslations('auth.login');
+  const tErrors = useTranslations('auth.errors');
+  const router = useRouter();
+  const { setUser } = useUser();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
     setIsLoading(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log('Login:', { email, password, rememberMe });
-    setIsLoading(false);
+
+    try {
+      // Simulate API call delay
+      await new Promise((resolve) => setTimeout(resolve, 800));
+
+      // Mock authentication
+      const user = mockLogin(email, password);
+
+      if (!user) {
+        setError(tErrors('invalidCredentials'));
+        setIsLoading(false);
+        return;
+      }
+
+      // Set user in context
+      setUser(user);
+
+      // Redirect to dashboard
+      router.push('/dashboard');
+    } catch (err) {
+      setError(tErrors('invalidCredentials'));
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -48,6 +75,27 @@ export default function LoginPage() {
 
         {/* Form Card */}
         <div className="bg-[var(--color-bg-surface)] border border-[var(--color-border-default)] rounded-2xl p-6 sm:p-8">
+          {/* Error Message */}
+          {error && (
+            <div className="mb-5 p-4 bg-[var(--color-error-50)] border border-[var(--color-error-200)] rounded-xl">
+              <p className="text-sm text-[var(--color-error-700)]">{error}</p>
+            </div>
+          )}
+
+          {/* Mock Users Info (Development Only) */}
+          <div className="mb-5 p-4 bg-[var(--color-bg-muted)] border border-[var(--color-border-default)] rounded-xl">
+            <p className="text-xs font-medium text-[var(--color-text-primary)] mb-2">
+              🧪 Mock Users (for testing):
+            </p>
+            <div className="text-xs text-[var(--color-text-secondary)] space-y-1">
+              <p>• member@botaniq.app / password</p>
+              <p>• owner@botaniq.app / password</p>
+              <p>• broker@botaniq.app / password</p>
+              <p>• charter@botaniq.app / password</p>
+              <p>• admin@botaniq.app / password</p>
+            </div>
+          </div>
+
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Email */}
             <div>

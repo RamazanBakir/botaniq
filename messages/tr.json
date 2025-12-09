@@ -2,6 +2,9 @@
   "common": {
     "brand": "botaniq",
     "tagline": "Yapay zeka destekli tekne keşfi",
+    "yes": "Evet",
+    "no": "Hayır",
+    "optional": "isteğe bağlı",
     "nav": {
       "home": "Ana Sayfa",
       "explore": "Keşfet",
@@ -396,6 +399,314 @@
       "empty": {
         "title": "İncelenecek ilan yok",
         "subtitle": "Tüm ilanlar moderasyondan geçti."
+      }
+    }
+  },
+  "onboarding": {
+    "progress": {
+      "step": "Adım {current} / {total}"
+    },
+    "buttons": {
+      "continue": "Devam",
+      "back": "Geri",
+      "skip": "Şimdilik atla"
+    },
+    "usage": {
+      "title": "Botaniq'i nasıl kullanacaksınız?",
+      "description": "Deneyiminizi kişiselleştirmemize yardımcı olun.",
+      "options": {
+        "enthusiast": {
+          "title": "Tekne Meraklısı",
+          "description": "Tekneleri keşfetmek, Snap-to-ID kullanmak ve favorilerimi kaydetmek istiyorum."
+        },
+        "owner": {
+          "title": "Tekne Sahibi",
+          "description": "Bir teknem var ve platformda listelemek veya yönetmek istiyorum."
+        },
+        "broker": {
+          "title": "Broker / Bayi",
+          "description": "Birden fazla tekneyle çalışıyorum ve profesyonelce satış/yönetim yapıyorum."
+        },
+        "charter": {
+          "title": "Charter Şirketi",
+          "description": "Charter tekneleri yönetiyorum ve filomu listelemek istiyorum."
+        }
+      }
+    },
+    "details": {
+      "member": {
+        "title": "Birkaç hızlı soru",
+        "subtitle": "Bu, tekne keşif deneyiminizi kişiselleştirmemize yardımcı olur.",
+        "country": "Neredesiniz?",
+        "selectCountry": "Ülkenizi seçin",
+        "experienceLabel": "Tekneler konusunda ne kadar deneyimlisiniz?",
+        "experience": {
+          "beginner": "Başlangıç – Yeni başlıyorum",
+          "intermediate": "Orta – Biraz deneyimim var",
+          "expert": "Uzman – Çok deneyimliyim"
+        }
+      },
+      "owner": {
+        "title": "Tekneniz hakkında",
+        "subtitle": "Bu, tekne sahibi kontrol panelinizi kurmamıza yardımcı olur.",
+        "ownsBoat": "Şu anda bir tekneniz var mı?",
+        "boatCount": "Kaç tekneniz var?",
+        "boatLocation": "Ana tekneniz nerede?",
+        "selectCountry": "Ülke seçin",
+        "planToListLabel": "Teknenizi listelemek istiyor musunuz?",
+        "planToList": {
+          "sale": "Evet, satılık",
+          "charter": "Evet, kiralık",
+          "both": "Evet, hem satılık hem kiralık",
+          "none": "Hayır, şimdilik değil"
+        }
+      },
+      "broker": {
+        "title": "İşletmeniz hakkında",
+        "subtitle": "Bu, broker kontrol panelinizi kurmamıza yardımcı olur.",
+        "companyName": "Şirket adı",
+        "companyNamePlaceholder": "Şirket adınızı girin",
+        "website": "Şirket web sitesi",
+        "portfolioLabel": "Kaç tekne yönetiyorsunuz?",
+        "portfolio": {
+          "small": "1-10 tekne",
+          "medium": "11-50 tekne",
+          "large": "50+ tekne"
+        },
+        "regionsLabel": "Faaliyet bölgeleri",
+        "selectMultiple": "Geçerli olanları seçin"
+      },
+      "charter": {
+        "title": "Filonuz hakkında",
+        "subtitle": "Bu, charter kontrol panelinizi kurmamıza yardımcı olur.",
+        "fleetLabel": "Filonuzda kaç tekne var?",
+        "fleet": {
+          "small": "1-3 tekne",
+          "medium": "4-10 tekne",
+          "large": "10+ tekne"
+        },
+        "regionLabel": "Ana charter bölgesi",
+        "selectRegion": "Bölgenizi seçin",
+        "usesOtherPlatforms": "Başka charter platformları kullanıyor musunuz?",
+        "whichPlatforms": "Hangi platformlar?",
+        "platformsPlaceholder": "örn. Click&Boat, Nautal"
+      }
+    },
+    "completed": {
+      "title": "Hazırsınız!",
+      "subtitle": "Hesabınız hazır. Hadi başlayalım!",
+      "joiningAs": "Olarak katılıyorsunuz:",
+      "role": {
+        "enthusiast": "Tekne Meraklısı",
+        "owner": "Tekne Sahibi",
+        "broker": "Broker / Bayi",
+        "charter": "Charter Şirketi"
+      },
+      "whatYouCanDo": "Yapabilecekleriniz:",
+      "actions": {
+        "enthusiast": {
+          "explore": "Binlerce satılık tekneyi keşfedin",
+          "snap": "Herhangi bir tekneyi tanımlamak için Snap-to-ID kullanın",
+          "save": "Favori teknelerinizi kaydedin"
+        },
+        "owner": {
+          "create": "İlk tekne ilanınızı oluşturun",
+          "manage": "İlanlarınızı kontrol panelinizden yönetin",
+          "connect": "Potansiyel alıcılarla bağlantı kurun"
+        },
+        "broker": {
+          "dashboard": "Broker kontrol panelinize erişin",
+          "listings": "Tüm tekne ilanlarınızı yönetin",
+          "analytics": "Görüntülemeleri ve sorguları takip edin"
+        },
+        "charter": {
+          "fleet": "Charter filonuza tekneler ekleyin",
+          "bookings": "Charter rezervasyonlarını yönetin",
+          "calendar": "Müsaitlik takvimlerini ayarlayın"
+        }
+      },
+      "cta": {
+        "enthusiast": "Keşfetmeye Başla",
+        "owner": "İlk İlanınızı Oluşturun",
+        "broker": "Kontrol Paneline Git",
+        "charter": "Filonuzu Kurun",
+        "default": "Kontrol Paneline Devam"
+      },
+      "exploreLater": "Daha sonra keşfederim"
+    }
+  },
+  "dashboard": {
+    "loading": "Kontrol paneliniz yükleniyor...",
+    "settingUp": "Hesabınız ayarlanıyor...",
+    "notAuthenticated": {
+      "title": "Giriş gerekli",
+      "description": "Kontrol panelinize erişmek için lütfen giriş yapın.",
+      "login": "Giriş yap",
+      "register": "Hesap oluştur"
+    },
+    "adminRedirect": {
+      "title": "Yönetici Hesabı",
+      "description": "Yönetici olarak ilanları ve kullanıcıları yönetmek için lütfen yönetici panelini kullanın.",
+      "cta": "Yönetici Paneline Git"
+    },
+    "common": {
+      "viewAll": "Tümünü gör",
+      "status": {
+        "active": "Aktif",
+        "pending": "Beklemede",
+        "rejected": "Reddedildi",
+        "available": "Müsait",
+        "booked": "Rezerveli"
+      }
+    },
+    "member": {
+      "badge": "Tekne Meraklısı",
+      "title": "Hayalindeki tekneyi keşfet",
+      "titleWithName": "Tekrar hoş geldin, {name}!",
+      "subtitle": "Binlerce tekneyi keşfet, yapay zeka ile herhangi bir tekneyi tanımla ve favorilerini kaydet.",
+      "cta": {
+        "explore": "Tekneleri Keşfet"
+      },
+      "sections": {
+        "quickActions": "Hızlı İşlemler",
+        "recentActivity": "Son Aktivite",
+        "recentActivitySubtitle": "Son keşifleriniz ve kaydettiğiniz tekneler",
+        "tips": "Sizin İçin İpuçları"
+      },
+      "actions": {
+        "explore": {
+          "title": "Pazaryerini Keşfet",
+          "description": "İnteraktif harita üzerinde teknelere göz at"
+        },
+        "snap": {
+          "title": "Snap-to-ID",
+          "description": "Fotoğraftan herhangi bir tekneyi tanımla"
+        },
+        "favorites": {
+          "title": "Kaydedilen Favoriler",
+          "description": "Kaydettiğin tekneleri görüntüle"
+        }
+      },
+      "emptyActivity": {
+        "title": "Keşfetmeye başla",
+        "description": "Henüz hiç tekne görüntülemediniz. Pazaryerini keşfetmeye başlayın veya tekneleri tanımlamak için Snap-to-ID'yi kullanın.",
+        "cta": "Şimdi tekneleri keşfet"
+      },
+      "tips": {
+        "snap": {
+          "title": "Snap-to-ID'yi Dene",
+          "description": "Herhangi bir teknenin fotoğrafını yükleyerek marka ve modelini anında öğren."
+        },
+        "save": {
+          "title": "Favorilerini kaydet",
+          "description": "Favori listene eklemek için herhangi bir teknedeki kalp simgesine dokun."
+        }
+      }
+    },
+    "owner": {
+      "badge": "Tekne Sahibi",
+      "title": "Sahip Paneli",
+      "titleWithName": "Tekrar hoş geldin, {name}!",
+      "subtitle": "Tekne ilanlarını yönet ve potansiyel alıcılarla bağlantı kur.",
+      "cta": {
+        "createListing": "İlan Oluştur"
+      },
+      "sections": {
+        "overview": "Genel Bakış",
+        "yourListings": "İlanlarınız",
+        "quickActions": "Hızlı İşlemler"
+      },
+      "stats": {
+        "totalListings": "Toplam İlan",
+        "activeListings": "Aktif",
+        "views": "Görüntülenme",
+        "inquiries": "Sorgu"
+      },
+      "actions": {
+        "createListing": {
+          "title": "Yeni İlan Oluştur",
+          "description": "Teknenizi satılık veya kiralık listeleyin"
+        },
+        "manageListings": {
+          "title": "İlanları Yönet",
+          "description": "Tekne ilanlarınızı düzenleyin veya güncelleyin"
+        },
+        "explore": {
+          "title": "Pazaryerini Keşfet",
+          "description": "Piyasada neler olduğunu görün"
+        }
+      },
+      "emptyListings": {
+        "title": "Henüz ilan yok",
+        "cta": "İlk ilanınızı oluşturun"
+      }
+    },
+    "broker": {
+      "badge": "Broker",
+      "title": "Broker Paneli",
+      "titleWithName": "Tekrar hoş geldin, {name}!",
+      "subtitle": "Tekne portföyünüzü yönetin ve performansı takip edin.",
+      "cta": {
+        "createListing": "Yeni İlan"
+      },
+      "sections": {
+        "portfolioSummary": "Portföy Özeti",
+        "recentListings": "Son İlanlar",
+        "tools": "Araçlar ve İşlemler"
+      },
+      "stats": {
+        "totalListings": "Toplam İlan",
+        "activeListings": "Aktif",
+        "pendingApproval": "Beklemede",
+        "totalViews": "Toplam Görüntülenme"
+      },
+      "actions": {
+        "createListing": {
+          "title": "Yeni İlan Oluştur",
+          "description": "Portföyünüze yeni bir tekne ekleyin"
+        },
+        "managePortfolio": {
+          "title": "Portföyü Yönet",
+          "description": "Tüm ilanlarınızı görüntüleyin ve düzenleyin"
+        },
+        "viewAnalytics": {
+          "title": "Analitiği Görüntüle",
+          "description": "Görüntülemeleri ve sorguları takip edin"
+        }
+      }
+    },
+    "charter": {
+      "badge": "Charter Şirketi",
+      "title": "Charter Paneli",
+      "titleWithName": "Tekrar hoş geldin, {name}!",
+      "subtitle": "Charter filonuzu ve rezervasyonlarınızı yönetin.",
+      "cta": {
+        "createCharterListing": "Charter Teknesi Ekle"
+      },
+      "sections": {
+        "fleetSummary": "Filo Özeti",
+        "charterFleet": "Charter Filosu",
+        "shortcuts": "Kısayollar"
+      },
+      "stats": {
+        "fleetSize": "Filo Boyutu",
+        "activeCharters": "Aktif Charterlar",
+        "upcomingBookings": "Yaklaşan",
+        "mainRegion": "Ana Bölge"
+      },
+      "actions": {
+        "addBoat": {
+          "title": "Charter Teknesi Ekle",
+          "description": "Filonuza yeni bir tekne ekleyin"
+        },
+        "manageFleet": {
+          "title": "Filoyu Yönet",
+          "description": "Charter teknelerinizi görüntüleyin ve düzenleyin"
+        },
+        "viewCalendar": {
+          "title": "Müsaitlik Takvimi",
+          "description": "Rezervasyon müsaitliğini yönetin"
+        }
       }
     }
   },

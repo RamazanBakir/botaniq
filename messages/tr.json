@@ -556,7 +556,8 @@
         "pending": "Beklemede",
         "rejected": "Reddedildi",
         "available": "Müsait",
-        "booked": "Rezerveli"
+        "booked": "Rezerveli",
+        "maintenance": "Bakımda"
       }
     },
     "member": {
@@ -708,6 +709,81 @@
           "description": "Rezervasyon müsaitliğini yönetin"
         }
       }
+    }
+  },
+  "listings": {
+    "title": {
+      "owner": "İlanlarım",
+      "broker": "Portföy",
+      "charter": "Charter İlanları"
+    },
+    "subtitle": "{count} ilan",
+    "createNew": "Yeni Oluştur",
+    "views": "görüntülenme",
+    "inquiries": "sorgu",
+    "actions": {
+      "view": "Görüntüle",
+      "edit": "Düzenle",
+      "delete": "Sil"
+    },
+    "empty": {
+      "title": "Henüz ilan yok",
+      "description": "Henüz ilan oluşturmadınız. İlk tekne ilanınızı oluşturarak başlayın.",
+      "cta": "İlk ilanınızı oluşturun"
+    }
+  },
+  "analytics": {
+    "title": "Analitik",
+    "subtitle": "İlanlarınızın performansını takip edin",
+    "stats": {
+      "totalViews": "Toplam Görüntülenme",
+      "totalInquiries": "Toplam Sorgu",
+      "avgTimeOnPage": "Ort. Sayfa Süresi",
+      "conversionRate": "Dönüşüm Oranı"
+    },
+    "chart": {
+      "title": "Zaman İçindeki Performans",
+      "views": "Görüntülenme",
+      "inquiries": "Sorgu"
+    },
+    "topListings": {
+      "title": "En İyi Performans Gösteren İlanlar",
+      "views": "görüntülenme",
+      "inquiries": "sorgu",
+      "view": "Görüntüle"
+    }
+  },
+  "fleet": {
+    "title": "Charter Filosu",
+    "subtitle": "Filonuzda {count} tekne",
+    "addBoat": "Tekne Ekle",
+    "viewCalendar": "Takvimi Görüntüle",
+    "nextBooking": "Sonraki rezervasyon",
+    "actions": {
+      "view": "Detayları Görüntüle"
+    }
+  },
+  "calendar": {
+    "title": "Müsaitlik Takvimi",
+    "subtitle": "Charter müsaitliğinizi yönetin",
+    "manageFleet": "Filoyu Yönet",
+    "allBoats": "Tüm Tekneler",
+    "upcomingBookings": "Yaklaşan Rezervasyonlar",
+    "legend": "Açıklama",
+    "booked": "Rezerveli",
+    "available": "Müsait"
+  },
+  "favorites": {
+    "title": "Kaydedilen Tekneler",
+    "subtitle": "{count} tekne kaydedildi",
+    "exploreMore": "Daha Fazla Keşfet",
+    "removeFavorite": "Favorilerden kaldır",
+    "savedOn": "Kaydedilme tarihi",
+    "viewDetails": "Detayları Gör",
+    "empty": {
+      "title": "Kaydedilen tekne yok",
+      "description": "Henüz tekne kaydetmediniz. Pazaryerine göz atın ve beğendiğiniz tekneleri kaydetmek için kalp simgesine dokunun.",
+      "cta": "Keşfetmeye Başla"
     }
   },
   "meta": {

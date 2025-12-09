@@ -556,7 +556,8 @@
         "pending": "Pending",
         "rejected": "Rejected",
         "available": "Available",
-        "booked": "Booked"
+        "booked": "Booked",
+        "maintenance": "Maintenance"
       }
     },
     "member": {
@@ -708,6 +709,81 @@
           "description": "Manage booking availability"
         }
       }
+    }
+  },
+  "listings": {
+    "title": {
+      "owner": "My Listings",
+      "broker": "Portfolio",
+      "charter": "Charter Listings"
+    },
+    "subtitle": "{count} listings",
+    "createNew": "Create New",
+    "views": "views",
+    "inquiries": "inquiries",
+    "actions": {
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "empty": {
+      "title": "No listings yet",
+      "description": "You haven't created any listings yet. Start by creating your first boat listing.",
+      "cta": "Create your first listing"
+    }
+  },
+  "analytics": {
+    "title": "Analytics",
+    "subtitle": "Track the performance of your listings",
+    "stats": {
+      "totalViews": "Total Views",
+      "totalInquiries": "Total Inquiries",
+      "avgTimeOnPage": "Avg. Time on Page",
+      "conversionRate": "Conversion Rate"
+    },
+    "chart": {
+      "title": "Performance Over Time",
+      "views": "Views",
+      "inquiries": "Inquiries"
+    },
+    "topListings": {
+      "title": "Top Performing Listings",
+      "views": "views",
+      "inquiries": "inquiries",
+      "view": "View"
+    }
+  },
+  "fleet": {
+    "title": "Charter Fleet",
+    "subtitle": "{count} boats in your fleet",
+    "addBoat": "Add Boat",
+    "viewCalendar": "View Calendar",
+    "nextBooking": "Next booking",
+    "actions": {
+      "view": "View Details"
+    }
+  },
+  "calendar": {
+    "title": "Availability Calendar",
+    "subtitle": "Manage your charter availability",
+    "manageFleet": "Manage Fleet",
+    "allBoats": "All Boats",
+    "upcomingBookings": "Upcoming Bookings",
+    "legend": "Legend",
+    "booked": "Booked",
+    "available": "Available"
+  },
+  "favorites": {
+    "title": "Saved Boats",
+    "subtitle": "{count} boats saved",
+    "exploreMore": "Explore More",
+    "removeFavorite": "Remove from favorites",
+    "savedOn": "Saved on",
+    "viewDetails": "View Details",
+    "empty": {
+      "title": "No saved boats",
+      "description": "You haven't saved any boats yet. Browse the marketplace and tap the heart icon to save boats you like.",
+      "cta": "Start Exploring"
     }
   },
   "meta": {

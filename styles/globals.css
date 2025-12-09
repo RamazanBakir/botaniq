@@ -14,84 +14,40 @@
 /* ========================================
    Tailwind v4 Theme Configuration
    
-   Maps CSS variables to Tailwind utilities
+   Extends Tailwind's default theme with our custom values
    ======================================== */
-@theme inline {
-  /* Colors - Brand */
-  --color-brand-50: var(--color-brand-primary-50);
-  --color-brand-100: var(--color-brand-primary-100);
-  --color-brand-200: var(--color-brand-primary-200);
-  --color-brand-300: var(--color-brand-primary-300);
-  --color-brand-400: var(--color-brand-primary-400);
-  --color-brand-500: var(--color-brand-primary-500);
-  --color-brand-600: var(--color-brand-primary-600);
-  --color-brand-700: var(--color-brand-primary-700);
-  --color-brand-800: var(--color-brand-primary-800);
-  --color-brand-900: var(--color-brand-primary-900);
-
-  /* Colors - Semantic Backgrounds */
-  --color-canvas: var(--color-bg-canvas);
-  --color-surface: var(--color-bg-surface);
-  --color-muted: var(--color-bg-muted);
-  --color-elevated: var(--color-bg-elevated);
-
-  /* Colors - Text */
-  --color-foreground: var(--color-text-primary);
-  --color-foreground-secondary: var(--color-text-secondary);
-  --color-foreground-tertiary: var(--color-text-tertiary);
-  --color-foreground-inverse: var(--color-text-inverse);
-  --color-link: var(--color-text-link);
-
-  /* Colors - Border */
-  --color-border: var(--color-border-default);
-  --color-border-muted: var(--color-border-muted);
-  --color-border-strong: var(--color-border-strong);
-
-  /* Colors - Feedback */
-  --color-success: var(--color-success-500);
-  --color-warning: var(--color-warning-500);
-  --color-error: var(--color-error-500);
-  --color-info: var(--color-info-500);
-
-  /* Typography - Fonts */
-  --font-sans: var(--font-family-sans);
-  --font-mono: var(--font-family-mono);
-
-  /* Typography - Font Sizes */
-  --text-display: var(--font-size-display);
-  --text-h1: var(--font-size-h1);
-  --text-h2: var(--font-size-h2);
-  --text-h3: var(--font-size-h3);
-  --text-h4: var(--font-size-h4);
-  --text-body: var(--font-size-body);
-  --text-small: var(--font-size-small);
-  --text-caption: var(--font-size-caption);
-
-  /* Spacing */
-  --spacing-xs: var(--spacing-xs);
-  --spacing-sm: var(--spacing-sm);
-  --spacing-md: var(--spacing-md);
-  --spacing-lg: var(--spacing-lg);
-  --spacing-xl: var(--spacing-xl);
-  --spacing-2xl: var(--spacing-2xl);
-  --spacing-3xl: var(--spacing-3xl);
-  --spacing-4xl: var(--spacing-4xl);
-
-  /* Border Radius */
-  --radius-sm: var(--radius-sm);
-  --radius-md: var(--radius-md);
-  --radius-lg: var(--radius-lg);
-  --radius-xl: var(--radius-xl);
-  --radius-2xl: var(--radius-2xl);
-  --radius-3xl: var(--radius-3xl);
-  --radius-full: var(--radius-full);
-
-  /* Shadows */
-  --shadow-sm: var(--shadow-sm);
-  --shadow-md: var(--shadow-md);
-  --shadow-lg: var(--shadow-lg);
-  --shadow-xl: var(--shadow-xl);
-  --shadow-2xl: var(--shadow-2xl);
+@theme {
+  /* Override default font to use DM Sans */
+  --font-family-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* Custom brand colors */
+  --color-brand-50: #e6f4f4;
+  --color-brand-100: #cce9ea;
+  --color-brand-200: #99d3d5;
+  --color-brand-300: #66bdc0;
+  --color-brand-400: #33a7ab;
+  --color-brand-500: #008b8b;
+  --color-brand-600: #007070;
+  --color-brand-700: #005555;
+  --color-brand-800: #003a3a;
+  --color-brand-900: #001f1f;
+  
+  /* Semantic colors */
+  --color-canvas: #fafafa;
+  --color-surface: #ffffff;
+  --color-muted: #f5f5f5;
+  
+  /* Success colors */
+  --color-success-50: #ecfdf5;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  
+  /* Warning colors */
+  --color-warning-500: #f59e0b;
+  
+  /* Error colors */
+  --color-error-500: #ef4444;
 }
 
 /* ========================================

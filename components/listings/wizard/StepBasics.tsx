@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { WizardHeader } from '@/components/wizard';
 import { TextInput, Select, NumberInput } from '@/design-system/components/forms';
 import type { ListingFormData } from './types';
@@ -13,11 +14,13 @@ export interface StepBasicsProps {
 }
 
 export function StepBasics({ data, onChange, errors = {} }: StepBasicsProps) {
+  const t = useTranslations('wizard.basics');
+
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <WizardHeader
-        title="Boat basics"
-        description="Tell us about your boat. This information helps buyers find the right vessel."
+        title={t('title')}
+        description={t('subtitle')}
         icon={
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
@@ -25,14 +28,14 @@ export function StepBasics({ data, onChange, errors = {} }: StepBasicsProps) {
         }
       />
 
-      <div className="grid gap-6">
+      <div className="space-y-5">
         {/* Boat Type */}
         <Select
-          label="Boat type"
+          label={t('boatType')}
           options={BOAT_TYPES}
           value={data.boatType}
           onChange={(e) => onChange({ boatType: e.target.value })}
-          placeholder="Select boat type"
+          placeholder={t('selectType')}
           required
           error={errors.boatType}
         />
@@ -40,16 +43,16 @@ export function StepBasics({ data, onChange, errors = {} }: StepBasicsProps) {
         {/* Brand & Model - Two columns on desktop */}
         <div className="grid sm:grid-cols-2 gap-4">
           <TextInput
-            label="Brand"
-            placeholder="e.g., Sea Ray, Beneteau"
+            label={t('brand')}
+            placeholder={t('brandPlaceholder')}
             value={data.brand}
             onChange={(e) => onChange({ brand: e.target.value })}
             required
             error={errors.brand}
           />
           <TextInput
-            label="Model"
-            placeholder="e.g., Sundancer 320"
+            label={t('model')}
+            placeholder={t('modelPlaceholder')}
             value={data.model}
             onChange={(e) => onChange({ model: e.target.value })}
             required
@@ -60,8 +63,8 @@ export function StepBasics({ data, onChange, errors = {} }: StepBasicsProps) {
         {/* Year & Length - Two columns on desktop */}
         <div className="grid sm:grid-cols-2 gap-4">
           <NumberInput
-            label="Year"
-            placeholder="e.g., 2021"
+            label={t('year')}
+            placeholder={t('yearPlaceholder')}
             value={data.year}
             onChange={(e) => onChange({ year: e.target.value ? Number(e.target.value) : '' })}
             min={1900}
@@ -69,11 +72,11 @@ export function StepBasics({ data, onChange, errors = {} }: StepBasicsProps) {
             required
             error={errors.year}
           />
-          <div className="flex gap-2">
+          <div className="flex gap-3">
             <div className="flex-1">
               <NumberInput
-                label="Length"
-                placeholder="e.g., 32"
+                label={t('length')}
+                placeholder={t('lengthPlaceholder')}
                 value={data.length}
                 onChange={(e) => onChange({ length: e.target.value ? Number(e.target.value) : '' })}
                 min={1}
@@ -81,7 +84,7 @@ export function StepBasics({ data, onChange, errors = {} }: StepBasicsProps) {
                 error={errors.length}
               />
             </div>
-            <div className="w-24 pt-7">
+            <div className="w-20 self-end">
               <Select
                 options={[
                   { value: 'ft', label: 'ft' },
@@ -100,4 +103,3 @@ export function StepBasics({ data, onChange, errors = {} }: StepBasicsProps) {
 }
 
 export default StepBasics;
-

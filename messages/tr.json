@@ -1,0 +1,437 @@
+{
+  "common": {
+    "brand": "botaniq",
+    "tagline": "Yapay zeka destekli tekne keşfi",
+    "nav": {
+      "home": "Ana Sayfa",
+      "explore": "Keşfet",
+      "snap": "Snap-to-ID",
+      "sellBoat": "Tekne sat",
+      "createListing": "İlan oluştur",
+      "admin": "Yönetim"
+    },
+    "buttons": {
+      "save": "Kaydet",
+      "cancel": "İptal",
+      "next": "İleri",
+      "back": "Geri",
+      "continue": "Devam",
+      "submit": "Gönder",
+      "tryAgain": "Tekrar dene",
+      "learnMore": "Daha fazla",
+      "viewAll": "Tümünü gör",
+      "close": "Kapat"
+    },
+    "footer": {
+      "copyright": "© {year} Botaniq",
+      "privacy": "Gizlilik",
+      "terms": "Şartlar"
+    },
+    "language": {
+      "select": "Dil",
+      "en": "English",
+      "tr": "Türkçe"
+    },
+    "validation": {
+      "required": "Bu alan zorunludur",
+      "invalidEmail": "Geçerli bir e-posta girin",
+      "minLength": "En az {min} karakter olmalıdır",
+      "maxLength": "En fazla {max} karakter olmalıdır"
+    }
+  },
+  "home": {
+    "badge": "Yapay Zeka Destekli Tekne Keşfi",
+    "title": "Hayalindeki",
+    "titleHighlight": "tekneyi bul",
+    "subtitle": "Satılık binlerce tekneyi keşfet, yapay zeka ile herhangi bir tekneyi fotoğraftan tanımla ve hayalindeki tekneyi bul.",
+    "cta": {
+      "explore": "Tekneleri Keşfet",
+      "snap": "Snap-to-ID"
+    },
+    "trust": {
+      "free": "Ücretsiz kullanım",
+      "noAccount": "Hesap gerektirmez",
+      "instant": "Anında sonuç"
+    },
+    "features": {
+      "title": "İhtiyacın olan her şey",
+      "subtitle": "Tekneleri keşfet, tanımla ve mükemmel eşleşmeni bul",
+      "explore": {
+        "title": "Pazaryerini Keşfet",
+        "description": "İnteraktif harita üzerinde binlerce satılık tekneye göz at. Tür, fiyat, konum ve daha fazlasına göre filtrele."
+      },
+      "snap": {
+        "title": "Snap-to-ID",
+        "description": "Herhangi bir teknenin fotoğrafını yükle ve yapay zeka ile marka, model ve özelliklerini anında tanımla."
+      },
+      "ai": {
+        "title": "Yapay Zeka Asistanı",
+        "description": "Tercihlerine göre kişiselleştirilmiş tekne önerileri almak için yapay zeka ile sohbet et.",
+        "badge": "Yakında"
+      }
+    },
+    "ctaSection": {
+      "title": "Tekneni bulmaya hazır mısın?",
+      "subtitle": "Pazaryerini keşfetmeye başla veya fotoğraftan tekne tanımlamak için Snap-to-ID'yi kullan.",
+      "button": "Keşfetmeye başla"
+    }
+  },
+  "snap": {
+    "badge": "Yapay Zeka Destekli",
+    "title": "Snap-to-ID",
+    "subtitle": "Herhangi bir teknenin fotoğrafını yükleyerek marka, model ve özelliklerini anında tanımla.",
+    "picker": {
+      "title": "Tekne fotoğrafı yükle",
+      "titleDragging": "Resmi buraya bırak",
+      "hint": "Sürükle bırak veya göz atmak için tıkla",
+      "formats": "JPG, PNG veya WebP · Maks 10MB",
+      "mobileHint": "Kameranızla fotoğraf çekmek için dokunun",
+      "errors": {
+        "invalidType": "Lütfen bir resim dosyası seçin (JPG, PNG, WebP)",
+        "tooLarge": "Resim boyutu 10MB'dan küçük olmalıdır"
+      }
+    },
+    "preview": {
+      "tip": "En iyi sonuçlar için teknenin net görünür olduğundan emin olun.",
+      "identify": "Bu tekneyi tanımla",
+      "chooseAnother": "Başka bir tane seç",
+      "privacyNote": "Fotoğrafınız güvenli bir şekilde işlenir ve saklanmaz."
+    },
+    "processing": {
+      "title": "Fotoğrafınız analiz ediliyor...",
+      "subtitle": "Yapay zekamız tekneyi tanımlıyor. Bu birkaç saniye sürebilir."
+    },
+    "results": {
+      "title": "Eşleşme bulundu!",
+      "subtitle": "Fotoğrafınızdan tanımladığımız sonuçlar.",
+      "bestMatch": "En İyi Eşleşme",
+      "alternatives": "Diğer olası eşleşmeler",
+      "alternativeCount": "{count} alternatif",
+      "alternativeCountPlural": "{count} alternatif",
+      "confidence": "Eşleşme Güveni",
+      "length": "Uzunluk",
+      "year": "Yıl",
+      "viewSimilar": "Benzer satılık tekneleri gör",
+      "notRight": "Doğru tekne değil mi?",
+      "tryAnother": "Başka fotoğraf dene",
+      "feedback": "Geri bildirim ver"
+    },
+    "error": {
+      "title": "Bir şeyler ters gitti",
+      "subtitle": "Resminizi işleyemedik. Lütfen tekrar deneyin.",
+      "retry": "Tekrar dene"
+    },
+    "howItWorks": {
+      "title": "Nasıl çalışır",
+      "step1": {
+        "title": "Fotoğraf yükle",
+        "description": "Fotoğraf çekin veya galerinizden yükleyin"
+      },
+      "step2": {
+        "title": "Yapay zeka analiz eder",
+        "description": "Yapay zekamız tekneyi tarar ve veritabanımızla eşleştirir"
+      },
+      "step3": {
+        "title": "Anında sonuç al",
+        "description": "Güven puanları ve özelliklerle eşleşmeleri görün"
+      }
+    },
+    "tips": {
+      "title": "En iyi sonuçlar için ipuçları",
+      "lighting": "İyi aydınlatma sağlayın ve sert gölgelerden kaçının",
+      "profile": "Mümkünse teknenin tam yan profilini çekin",
+      "blur": "Daha doğru sonuçlar için bulanık resimlerden kaçının",
+      "resolution": "Yüksek çözünürlüklü fotoğraflar daha iyi doğruluk sağlar"
+    },
+    "privacy": {
+      "title": "Gizliliğiniz önemli",
+      "description": "Resimler güvenli bir şekilde işlenir ve analizden sonra saklanmaz."
+    }
+  },
+  "explore": {
+    "title": "Tekneleri Keşfet",
+    "subtitle": "{count} tekne mevcut",
+    "views": {
+      "grid": "Izgara",
+      "map": "Harita"
+    },
+    "filters": {
+      "title": "Filtreler",
+      "type": "Tekne Türü",
+      "allTypes": "Tüm Türler",
+      "priceRange": "Fiyat Aralığı",
+      "allPrices": "Tüm Fiyatlar",
+      "location": "Konum",
+      "allLocations": "Tüm Konumlar",
+      "reset": "Filtreleri sıfırla"
+    },
+    "empty": {
+      "title": "Sonuç bulunamadı",
+      "description": "Aramanıza uygun tekne bulunamadı."
+    },
+    "card": {
+      "featured": "Öne Çıkan",
+      "new": "Yeni",
+      "preOwned": "İkinci El"
+    }
+  },
+  "listing": {
+    "breadcrumb": "Keşfet",
+    "notFound": "İlan Bulunamadı",
+    "badges": {
+      "new": "Yeni",
+      "featured": "Öne Çıkan"
+    },
+    "sections": {
+      "description": "Açıklama",
+      "specifications": "Özellikler"
+    },
+    "actions": {
+      "save": "Kaydet",
+      "share": "Paylaş",
+      "report": "Şikayet Et"
+    },
+    "safety": {
+      "title": "Güvenlik İpuçları",
+      "description": "Satın almadan önce tekneyi mutlaka yerinde inceleyin. Tüm belgeleri doğrulayın ve deniz ekspertizi yaptırmayı düşünün."
+    },
+    "seller": {
+      "title": "Satıcıyla İletişim",
+      "verified": "Doğrulanmış Satıcı",
+      "memberSince": "{year}'den beri üye",
+      "responseTime": "Genellikle {time} içinde yanıt verir",
+      "call": "Ara",
+      "message": "Mesaj Gönder"
+    },
+    "specs": {
+      "length": "Uzunluk",
+      "beam": "Genişlik",
+      "draft": "Su Çekimi",
+      "engines": "Motorlar",
+      "fuelType": "Yakıt Türü",
+      "hullMaterial": "Gövde Malzemesi",
+      "cabins": "Kabin",
+      "berths": "Yatak"
+    }
+  },
+  "wizard": {
+    "title": "Tekne ilanı oluştur",
+    "subtitle": "Teknenizi satılık veya kiralık olarak listeleyin",
+    "cancelText": "İptal et ve geri dön",
+    "steps": {
+      "basics": {
+        "title": "Tekne bilgileri",
+        "description": "Tür, marka, model"
+      },
+      "location": {
+        "title": "Konum",
+        "description": "Tekne nerede"
+      },
+      "photos": {
+        "title": "Fotoğraflar",
+        "description": "Resim ekle"
+      },
+      "pricing": {
+        "title": "Fiyatlandırma",
+        "description": "Fiyat belirle"
+      },
+      "summary": {
+        "title": "İnceleme",
+        "description": "Detayları onayla"
+      }
+    },
+    "basics": {
+      "title": "Tekneniz hakkında bilgi verin",
+      "subtitle": "Teknenizin temel bilgileriyle başlayın.",
+      "boatType": "Tekne Türü",
+      "selectType": "Tür seçin",
+      "brand": "Marka",
+      "brandPlaceholder": "örn. Azimut, Sunseeker",
+      "model": "Model",
+      "modelPlaceholder": "örn. Flybridge 60",
+      "year": "Yıl",
+      "yearPlaceholder": "örn. 2020",
+      "length": "Uzunluk (ft)",
+      "lengthPlaceholder": "örn. 60",
+      "condition": "Durum",
+      "conditionNew": "Sıfır",
+      "conditionUsed": "İkinci El"
+    },
+    "location": {
+      "title": "Tekneniz nerede?",
+      "subtitle": "Bu, alıcıların ilanınızı bulmasına yardımcı olur.",
+      "country": "Ülke",
+      "selectCountry": "Ülke seçin",
+      "city": "Şehir / Liman",
+      "cityPlaceholder": "örn. İstanbul, Bodrum",
+      "marina": "Marina (isteğe bağlı)",
+      "marinaPlaceholder": "örn. Ataköy Marina"
+    },
+    "photos": {
+      "title": "Teknenizin fotoğraflarını ekleyin",
+      "subtitle": "Kaliteli fotoğraflar ilanınızın öne çıkmasını sağlar.",
+      "upload": "Fotoğraf Yükle",
+      "uploadHint": "Fotoğrafları buraya tıklayın veya sürükleyin",
+      "formats": "JPG, PNG veya WebP · Her biri maks 10MB",
+      "uploaded": "{count} fotoğraf yüklendi",
+      "uploadedPlural": "{count} fotoğraf yüklendi",
+      "remove": "Kaldır"
+    },
+    "pricing": {
+      "title": "Fiyatınızı belirleyin",
+      "subtitle": "Teknenizi nasıl satmak istediğinizi seçin.",
+      "price": "İstenen Fiyat",
+      "pricePlaceholder": "örn. 500000",
+      "currency": "Para Birimi",
+      "saleType": "Satış Türü",
+      "forSale": "Satılık",
+      "forCharter": "Kiralık",
+      "negotiable": "Fiyat pazarlığa açık",
+      "notes": "Ek notlar (isteğe bağlı)",
+      "notesPlaceholder": "Alıcılar için ek bilgiler..."
+    },
+    "summary": {
+      "title": "İlanınızı inceleyin",
+      "subtitle": "Yayınlamadan önce her şeyin doğru olduğundan emin olun.",
+      "edit": "Düzenle",
+      "boatDetails": "Tekne Detayları",
+      "locationDetails": "Konum",
+      "pricingDetails": "Fiyatlandırma"
+    },
+    "success": {
+      "title": "İlan oluşturuldu!",
+      "subtitle": "Tekne ilanınız başarıyla oluşturuldu. Kısa süre içinde alıcılara görünür olacak.",
+      "viewListings": "İlanları gör",
+      "createAnother": "Başka bir ilan oluştur"
+    },
+    "footer": {
+      "back": "Geri",
+      "continue": "Devam",
+      "createListing": "İlan oluştur",
+      "creating": "Oluşturuluyor..."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Tekrar hoş geldiniz",
+      "subtitle": "Devam etmek için hesabınıza giriş yapın",
+      "email": "E-posta adresi",
+      "emailPlaceholder": "ornek@email.com",
+      "password": "Şifre",
+      "passwordPlaceholder": "Şifrenizi girin",
+      "rememberMe": "Beni hatırla",
+      "forgotPassword": "Şifremi unuttum",
+      "submit": "Giriş yap",
+      "noAccount": "Hesabınız yok mu?",
+      "register": "Hesap oluştur"
+    },
+    "register": {
+      "title": "Hesap oluşturun",
+      "subtitle": "Tekne listelemek ve keşfetmek için Botaniq'e katılın",
+      "name": "Ad Soyad",
+      "namePlaceholder": "Ahmet Yılmaz",
+      "email": "E-posta adresi",
+      "emailPlaceholder": "ornek@email.com",
+      "password": "Şifre",
+      "passwordPlaceholder": "Şifre oluşturun",
+      "confirmPassword": "Şifre tekrar",
+      "confirmPasswordPlaceholder": "Şifrenizi onaylayın",
+      "terms": "Kullanım Şartları ve Gizlilik Politikasını kabul ediyorum",
+      "submit": "Hesap oluştur",
+      "hasAccount": "Zaten hesabınız var mı?",
+      "login": "Giriş yap"
+    },
+    "forgotPassword": {
+      "title": "Şifrenizi sıfırlayın",
+      "subtitle": "E-postanızı girin, size sıfırlama bağlantısı gönderelim",
+      "email": "E-posta adresi",
+      "emailPlaceholder": "ornek@email.com",
+      "submit": "Sıfırlama bağlantısı gönder",
+      "backToLogin": "Girişe dön",
+      "success": {
+        "title": "E-postanızı kontrol edin",
+        "subtitle": "{email} adresine şifre sıfırlama bağlantısı gönderdik"
+      }
+    },
+    "errors": {
+      "invalidCredentials": "Geçersiz e-posta veya şifre",
+      "emailInUse": "Bu e-posta zaten kayıtlı",
+      "weakPassword": "Şifre en az 8 karakter olmalıdır",
+      "passwordMismatch": "Şifreler eşleşmiyor"
+    }
+  },
+  "admin": {
+    "nav": {
+      "dashboard": "Kontrol Paneli",
+      "listings": "İlanlar",
+      "users": "Kullanıcılar"
+    },
+    "listings": {
+      "title": "İlan Moderasyonu",
+      "subtitle": "Tekne ilanlarını inceleyin ve yönetin",
+      "stats": {
+        "total": "Toplam İlan",
+        "pending": "İnceleme Bekleyen",
+        "approved": "Onaylanan",
+        "rejected": "Reddedilen"
+      },
+      "table": {
+        "id": "ID",
+        "title": "Başlık",
+        "owner": "Sahibi",
+        "status": "Durum",
+        "date": "Tarih",
+        "actions": "İşlemler"
+      },
+      "status": {
+        "pending": "Beklemede",
+        "approved": "Onaylandı",
+        "rejected": "Reddedildi"
+      },
+      "actions": {
+        "approve": "Onayla",
+        "reject": "Reddet",
+        "view": "Görüntüle"
+      },
+      "empty": {
+        "title": "İncelenecek ilan yok",
+        "subtitle": "Tüm ilanlar moderasyondan geçti."
+      }
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "Botaniq – Yapay zeka destekli tekne keşfi ve pazaryeri",
+      "description": "Binlerce satılık tekneyi keşfedin, yapay zeka ile fotoğraflardan tekneleri tanımlayın ve hayalinizdeki tekneyi Botaniq'te bulun."
+    },
+    "snap": {
+      "title": "Snap-to-ID | Botaniq – Fotoğraftan tekne tanımlama",
+      "description": "Botaniq'in Snap-to-ID özelliğini kullanarak basit bir fotoğraftan tekneleri tanımlayın ve benzer yatları keşfedin."
+    },
+    "explore": {
+      "title": "Tekneleri Keşfet | Botaniq",
+      "description": "İnteraktif harita üzerinde teknelere göz atın. Tür, fiyat, konum ve daha fazlasına göre filtreleyin."
+    },
+    "listing": {
+      "title": "{brand} {model} – Satılık | Botaniq",
+      "description": "{year} {brand} {model} satılık. {length}ft {type}."
+    },
+    "wizard": {
+      "title": "İlan Oluştur | Botaniq",
+      "description": "Teknenizi Botaniq pazaryerinde satılık veya kiralık olarak listeleyin."
+    },
+    "login": {
+      "title": "Giriş Yap | Botaniq",
+      "description": "Botaniq hesabınıza giriş yapın."
+    },
+    "register": {
+      "title": "Hesap Oluştur | Botaniq",
+      "description": "Tekne listelemek ve keşfetmek için Botaniq'e katılın."
+    },
+    "admin": {
+      "title": "Yönetim | Botaniq",
+      "description": "Botaniq yönetim paneli."
+    }
+  }
+}
+

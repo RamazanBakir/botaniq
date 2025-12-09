@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useCallback } from 'react';
+import { useTranslations } from 'next-intl';
 import { WizardStepper, WizardFooter } from '@/components/wizard';
 import type { WizardStep } from '@/components/wizard';
 import { StepBasics } from './StepBasics';
@@ -11,24 +12,26 @@ import { StepSummary } from './StepSummary';
 import type { ListingFormData } from './types';
 import { INITIAL_FORM_DATA } from './types';
 
-const WIZARD_STEPS: WizardStep[] = [
-  { id: 'basics', title: 'Boat basics', description: 'Type, brand, model' },
-  { id: 'location', title: 'Location', description: 'Where is the boat' },
-  { id: 'photos', title: 'Photos', description: 'Add images' },
-  { id: 'pricing', title: 'Pricing', description: 'Set your price' },
-  { id: 'summary', title: 'Review', description: 'Confirm details' },
-];
-
 export interface ListingWizardProps {
   onComplete?: (data: ListingFormData) => void;
   onCancel?: () => void;
 }
 
 export function ListingWizard({ onComplete, onCancel }: ListingWizardProps) {
+  const t = useTranslations('wizard');
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState<ListingFormData>(INITIAL_FORM_DATA);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Generate steps with translations
+  const WIZARD_STEPS: WizardStep[] = [
+    { id: 'basics', title: t('steps.basics.title'), description: t('steps.basics.description') },
+    { id: 'location', title: t('steps.location.title'), description: t('steps.location.description') },
+    { id: 'photos', title: t('steps.photos.title'), description: t('steps.photos.description') },
+    { id: 'pricing', title: t('steps.pricing.title'), description: t('steps.pricing.description') },
+    { id: 'summary', title: t('steps.summary.title'), description: t('steps.summary.description') },
+  ];
 
   const handleFormChange = useCallback((updates: Partial<ListingFormData>) => {
     setFormData((prev) => ({ ...prev, ...updates }));
@@ -72,7 +75,7 @@ export function ListingWizard({ onComplete, onCancel }: ListingWizardProps) {
     if (validateStep(currentStep)) {
       setCurrentStep((prev) => Math.min(prev + 1, WIZARD_STEPS.length - 1));
     }
-  }, [currentStep, validateStep]);
+  }, [currentStep, validateStep, WIZARD_STEPS.length]);
 
   const handleBack = useCallback(() => {
     setCurrentStep((prev) => Math.max(prev - 1, 0));
@@ -118,7 +121,7 @@ export function ListingWizard({ onComplete, onCancel }: ListingWizardProps) {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full max-w-3xl mx-auto">
       {/* Stepper */}
       <div className="mb-8">
         <WizardStepper
@@ -137,7 +140,7 @@ export function ListingWizard({ onComplete, onCancel }: ListingWizardProps) {
         </div>
 
         {/* Footer */}
-        <div className="mt-8">
+        <div className="mt-8 pt-6 border-t border-[var(--color-border-default)]">
           <WizardFooter
             currentStep={currentStep}
             totalSteps={WIZARD_STEPS.length}
@@ -146,6 +149,9 @@ export function ListingWizard({ onComplete, onCancel }: ListingWizardProps) {
             onSubmit={handleSubmit}
             isNextDisabled={isSubmitting}
             isSubmitting={isSubmitting}
+            backLabel={t('footer.back')}
+            nextLabel={t('footer.continue')}
+            submitLabel={t('footer.createListing')}
           />
         </div>
       </div>
@@ -158,7 +164,7 @@ export function ListingWizard({ onComplete, onCancel }: ListingWizardProps) {
             onClick={onCancel}
             className="text-sm text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] transition-colors"
           >
-            Cancel and go back
+            {t('cancelText')}
           </button>
         </div>
       )}

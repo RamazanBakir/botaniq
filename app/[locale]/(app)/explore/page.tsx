@@ -1,19 +1,39 @@
 import type { Metadata } from 'next';
+import { useTranslations } from 'next-intl';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { ListingList, ListingFilters } from '@/components/listings';
 import { MapShell } from '@/components/map';
 import { mockListings } from '@/lib/data/mockListings';
 
-export const metadata: Metadata = {
-  title: 'Explore Boats | Botaniq',
-  description: 'Browse boats on an interactive map. Filter by type, price, location, and more. Find your perfect vessel today.',
-  openGraph: {
-    title: 'Explore Boats | Botaniq',
-    description: 'Browse boats on an interactive map. Filter by type, price, location, and more.',
-    url: '/explore',
-  },
-};
+interface ExplorePageProps {
+  params: Promise<{ locale: string }>;
+}
 
-export default function ExplorePage() {
+export async function generateMetadata({ params }: ExplorePageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'meta' });
+
+  return {
+    title: t('explore.title'),
+    description: t('explore.description'),
+    openGraph: {
+      title: t('explore.title'),
+      description: t('explore.description'),
+      url: '/explore',
+    },
+  };
+}
+
+export default async function ExplorePage({ params }: ExplorePageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  return <ExplorePageContent />;
+}
+
+function ExplorePageContent() {
+  const t = useTranslations('explore');
+
   return (
     <div className="min-h-[calc(100vh-4rem)] bg-[var(--color-bg-canvas)]">
       {/* Page Header */}
@@ -22,10 +42,10 @@ export default function ExplorePage() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold text-[var(--color-text-primary)]">
-                Explore Boats
+                {t('title')}
               </h1>
               <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-                {mockListings.length} boats available
+                {t('subtitle', { count: mockListings.length })}
               </p>
             </div>
             <div className="flex items-center gap-3">
@@ -35,13 +55,13 @@ export default function ExplorePage() {
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                   </svg>
-                  <span className="hidden sm:inline">Grid</span>
+                  <span className="hidden sm:inline">{t('views.grid')}</span>
                 </button>
                 <button className="px-3 py-2 text-sm font-medium text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)] transition-colors flex items-center gap-2">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
                   </svg>
-                  <span className="hidden sm:inline">Map</span>
+                  <span className="hidden sm:inline">{t('views.map')}</span>
                 </button>
               </div>
             </div>
@@ -77,3 +97,4 @@ export default function ExplorePage() {
     </div>
   );
 }
+

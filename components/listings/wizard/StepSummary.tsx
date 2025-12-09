@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { WizardHeader } from '@/components/wizard';
 import type { ListingFormData } from './types';
 import { BOAT_TYPES, COUNTRIES, CURRENCIES } from './types';
@@ -15,15 +16,17 @@ function SummarySection({
   title,
   stepIndex,
   onEdit,
+  editLabel,
   children,
 }: {
   title: string;
   stepIndex: number;
   onEdit: (step: number) => void;
+  editLabel: string;
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-[var(--color-bg-surface)] border border-[var(--color-border-default)] rounded-xl p-5">
+    <div className="bg-[var(--color-bg-canvas)] border border-[var(--color-border-default)] rounded-xl p-5">
       <div className="flex items-center justify-between mb-4">
         <h3 className="font-semibold text-[var(--color-text-primary)]">{title}</h3>
         <button
@@ -31,7 +34,7 @@ function SummarySection({
           onClick={() => onEdit(stepIndex)}
           className="text-sm font-medium text-[var(--color-brand-primary-600)] hover:text-[var(--color-brand-primary-700)] transition-colors"
         >
-          Edit
+          {editLabel}
         </button>
       </div>
       {children}
@@ -43,13 +46,16 @@ function SummaryRow({ label, value }: { label: string; value: React.ReactNode })
   return (
     <div className="flex justify-between py-2 border-b border-[var(--color-border-muted)] last:border-0">
       <span className="text-sm text-[var(--color-text-secondary)]">{label}</span>
-      <span className="text-sm font-medium text-[var(--color-text-primary)]">{value}</span>
+      <span className="text-sm font-medium text-[var(--color-text-primary)] text-right">{value}</span>
     </div>
   );
 }
 
 export function StepSummary({ data, onEdit }: StepSummaryProps) {
-  const boatTypeLabel = BOAT_TYPES.find((t) => t.value === data.boatType)?.label || data.boatType;
+  const t = useTranslations('wizard.summary');
+  const tPricing = useTranslations('wizard.pricing');
+
+  const boatTypeLabel = BOAT_TYPES.find((bt) => bt.value === data.boatType)?.label || data.boatType;
   const countryLabel = COUNTRIES.find((c) => c.value === data.country)?.label || data.country;
   const currencySymbol = CURRENCIES.find((c) => c.value === data.currency)?.label || data.currency;
   const primaryPhoto = data.photos.find((p) => p.isPrimary) || data.photos[0];
@@ -60,10 +66,10 @@ export function StepSummary({ data, onEdit }: StepSummaryProps) {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <WizardHeader
-        title="Review your listing"
-        description="Make sure everything looks correct before publishing."
+        title={t('title')}
+        description={t('subtitle')}
         icon={
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -91,7 +97,7 @@ export function StepSummary({ data, onEdit }: StepSummaryProps) {
         )}
 
         {/* Boat Basics */}
-        <SummarySection title="Boat basics" stepIndex={0} onEdit={onEdit}>
+        <SummarySection title={t('boatDetails')} stepIndex={0} onEdit={onEdit} editLabel={t('edit')}>
           <SummaryRow label="Type" value={boatTypeLabel} />
           <SummaryRow label="Brand" value={data.brand || '-'} />
           <SummaryRow label="Model" value={data.model || '-'} />
@@ -100,43 +106,24 @@ export function StepSummary({ data, onEdit }: StepSummaryProps) {
         </SummarySection>
 
         {/* Location */}
-        <SummarySection title="Location" stepIndex={1} onEdit={onEdit}>
+        <SummarySection title={t('locationDetails')} stepIndex={1} onEdit={onEdit} editLabel={t('edit')}>
           <SummaryRow label="Country" value={countryLabel} />
           <SummaryRow label="City / Port" value={data.city || '-'} />
           {data.marina && <SummaryRow label="Marina" value={data.marina} />}
         </SummarySection>
 
-        {/* Photos */}
-        <SummarySection title="Photos" stepIndex={2} onEdit={onEdit}>
-          <p className="text-sm text-[var(--color-text-secondary)]">
-            {data.photos.length} photo{data.photos.length !== 1 ? 's' : ''} uploaded
-          </p>
-        </SummarySection>
-
         {/* Pricing */}
-        <SummarySection title="Price & conditions" stepIndex={3} onEdit={onEdit}>
-          <SummaryRow label="Listing type" value={data.saleType === 'charter' ? 'For charter' : 'For sale'} />
+        <SummarySection title={t('pricingDetails')} stepIndex={3} onEdit={onEdit} editLabel={t('edit')}>
+          <SummaryRow label="Listing type" value={data.saleType === 'charter' ? tPricing('forCharter') : tPricing('forSale')} />
           <SummaryRow 
-            label={data.saleType === 'charter' ? 'Price per day' : 'Price'} 
+            label="Price" 
             value={`${currencySymbol.split(' ')[0]} ${formatPrice(data.price)}`} 
           />
           <SummaryRow label="Negotiable" value={data.negotiable ? 'Yes' : 'No'} />
-          {data.notes && <SummaryRow label="Notes" value={data.notes} />}
         </SummarySection>
-      </div>
-
-      {/* Terms Notice */}
-      <div className="bg-[var(--color-bg-muted)] rounded-xl p-4">
-        <p className="text-sm text-[var(--color-text-secondary)]">
-          By creating this listing, you agree to our{' '}
-          <span className="text-[var(--color-brand-primary-600)] hover:underline cursor-pointer">Terms of Service</span>
-          {' '}and{' '}
-          <span className="text-[var(--color-brand-primary-600)] hover:underline cursor-pointer">Listing Guidelines</span>.
-        </p>
       </div>
     </div>
   );
 }
 
 export default StepSummary;
-

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { WizardHeader } from '@/components/wizard';
 import { Select, NumberInput, Textarea } from '@/design-system/components/forms';
 import type { ListingFormData } from './types';
@@ -13,11 +14,13 @@ export interface StepPricingProps {
 }
 
 export function StepPricing({ data, onChange, errors = {} }: StepPricingProps) {
+  const t = useTranslations('wizard.pricing');
+
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <WizardHeader
-        title="Price & conditions"
-        description="Set your asking price and sale conditions."
+        title={t('title')}
+        description={t('subtitle')}
         icon={
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -25,11 +28,11 @@ export function StepPricing({ data, onChange, errors = {} }: StepPricingProps) {
         }
       />
 
-      <div className="grid gap-6">
+      <div className="space-y-5">
         {/* Sale Type */}
         <div className="space-y-3">
           <label className="block text-sm font-medium text-[var(--color-text-primary)]">
-            Listing type <span className="text-[var(--color-error-500)]">*</span>
+            {t('saleType')} <span className="text-[var(--color-error-500)]">*</span>
           </label>
           <div className="grid sm:grid-cols-2 gap-3">
             <button
@@ -56,10 +59,7 @@ export function StepPricing({ data, onChange, errors = {} }: StepPricingProps) {
                     ? 'text-[var(--color-brand-primary-700)]' 
                     : 'text-[var(--color-text-primary)]'
                 }`}>
-                  For sale
-                </p>
-                <p className="text-sm text-[var(--color-text-secondary)]">
-                  Sell the boat
+                  {t('forSale')}
                 </p>
               </div>
             </button>
@@ -88,10 +88,7 @@ export function StepPricing({ data, onChange, errors = {} }: StepPricingProps) {
                     ? 'text-[var(--color-brand-primary-700)]' 
                     : 'text-[var(--color-text-primary)]'
                 }`}>
-                  For charter
-                </p>
-                <p className="text-sm text-[var(--color-text-secondary)]">
-                  Rent by day/week
+                  {t('forCharter')}
                 </p>
               </div>
             </button>
@@ -102,8 +99,8 @@ export function StepPricing({ data, onChange, errors = {} }: StepPricingProps) {
         <div className="grid sm:grid-cols-3 gap-4">
           <div className="sm:col-span-2">
             <NumberInput
-              label={data.saleType === 'charter' ? 'Price per day' : 'Asking price'}
-              placeholder="e.g., 189000"
+              label={t('price')}
+              placeholder={t('pricePlaceholder')}
               value={data.price}
               onChange={(e) => onChange({ price: e.target.value ? Number(e.target.value) : '' })}
               min={0}
@@ -113,7 +110,7 @@ export function StepPricing({ data, onChange, errors = {} }: StepPricingProps) {
           </div>
           <div>
             <Select
-              label="Currency"
+              label={t('currency')}
               options={CURRENCIES}
               value={data.currency}
               onChange={(e) => onChange({ currency: e.target.value })}
@@ -131,14 +128,14 @@ export function StepPricing({ data, onChange, errors = {} }: StepPricingProps) {
             className="w-5 h-5 rounded border-[var(--color-border-default)] text-[var(--color-brand-primary-500)] focus:ring-[var(--color-brand-primary-500)]"
           />
           <span className="text-sm font-medium text-[var(--color-text-primary)]">
-            Price is negotiable
+            {t('negotiable')}
           </span>
         </label>
 
         {/* Notes */}
         <Textarea
-          label="Additional notes (optional)"
-          placeholder="Any special conditions, included equipment, or other details..."
+          label={t('notes')}
+          placeholder={t('notesPlaceholder')}
           value={data.notes || ''}
           onChange={(e) => onChange({ notes: e.target.value })}
           maxCount={500}
@@ -150,4 +147,3 @@ export function StepPricing({ data, onChange, errors = {} }: StepPricingProps) {
 }
 
 export default StepPricing;
-

@@ -2,6 +2,7 @@
 
 import React, { useRef, useCallback } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { WizardHeader } from '@/components/wizard';
 import type { ListingFormData, ListingPhoto } from './types';
 
@@ -12,6 +13,7 @@ export interface StepPhotosProps {
 }
 
 export function StepPhotos({ data, onChange, errors = {} }: StepPhotosProps) {
+  const t = useTranslations('wizard.photos');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileSelect = useCallback(
@@ -65,10 +67,10 @@ export function StepPhotos({ data, onChange, errors = {} }: StepPhotosProps) {
   );
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <WizardHeader
-        title="Photos"
-        description="Add photos of your boat. Great photos help your listing stand out."
+        title={t('title')}
+        description={t('subtitle')}
         icon={
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
@@ -95,10 +97,10 @@ export function StepPhotos({ data, onChange, errors = {} }: StepPhotosProps) {
           </svg>
         </div>
         <p className="text-base font-medium text-[var(--color-text-primary)] mb-1">
-          Click to upload photos
+          {t('upload')}
         </p>
         <p className="text-sm text-[var(--color-text-tertiary)]">
-          or drag and drop · JPG, PNG up to 10MB each
+          {t('formats')}
         </p>
       </div>
 
@@ -109,16 +111,13 @@ export function StepPhotos({ data, onChange, errors = {} }: StepPhotosProps) {
       {/* Photo Grid */}
       {data.photos.length > 0 && (
         <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <p className="text-sm font-medium text-[var(--color-text-primary)]">
-              {data.photos.length} photo{data.photos.length !== 1 ? 's' : ''} added
-            </p>
-            <p className="text-xs text-[var(--color-text-tertiary)]">
-              Click the star to set primary photo
-            </p>
-          </div>
+          <p className="text-sm font-medium text-[var(--color-text-primary)]">
+            {data.photos.length === 1 
+              ? t('uploaded', { count: data.photos.length })
+              : t('uploadedPlural', { count: data.photos.length })}
+          </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {data.photos.map((photo) => (
               <div
                 key={photo.id}
@@ -133,7 +132,7 @@ export function StepPhotos({ data, onChange, errors = {} }: StepPhotosProps) {
                   alt="Boat photo"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  sizes="(max-width: 640px) 50vw, 33vw"
                 />
 
                 {/* Overlay */}
@@ -159,7 +158,7 @@ export function StepPhotos({ data, onChange, errors = {} }: StepPhotosProps) {
                     type="button"
                     onClick={() => handleRemovePhoto(photo.id)}
                     className="w-9 h-9 rounded-full bg-white/90 text-[var(--color-error-500)] hover:bg-[var(--color-error-500)] hover:text-white flex items-center justify-center transition-colors"
-                    title="Remove photo"
+                    title={t('remove')}
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -178,20 +177,8 @@ export function StepPhotos({ data, onChange, errors = {} }: StepPhotosProps) {
           </div>
         </div>
       )}
-
-      {/* Tips */}
-      <div className="bg-[var(--color-bg-muted)] rounded-xl p-4">
-        <p className="text-sm font-medium text-[var(--color-text-primary)] mb-2">Photo tips:</p>
-        <ul className="text-sm text-[var(--color-text-secondary)] space-y-1">
-          <li>• Include exterior shots from multiple angles</li>
-          <li>• Show the cockpit, cabin, and engine</li>
-          <li>• Use good lighting and avoid blurry images</li>
-          <li>• Add at least 5 photos for best results</li>
-        </ul>
-      </div>
     </div>
   );
 }
 
 export default StepPhotos;
-

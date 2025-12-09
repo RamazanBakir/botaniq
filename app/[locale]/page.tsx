@@ -1,6 +1,22 @@
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
+import { Link } from '@/i18n/navigation';
 
-export default function HomePage() {
+interface HomePageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function HomePage({ params }: HomePageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  return <HomePageContent />;
+}
+
+function HomePageContent() {
+  const t = useTranslations('home');
+  const tCommon = useTranslations('common');
+
   return (
     <div className="min-h-[calc(100vh-4rem)]">
       {/* Hero Section */}
@@ -24,19 +40,18 @@ export default function HomePage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-primary-400)] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-brand-primary-500)]"></span>
               </span>
-              AI-Powered Boat Discovery
+              {t('badge')}
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-[var(--color-text-primary)] mb-6">
-              Find your perfect
-              <span className="block text-[var(--color-brand-primary-500)]">boat</span>
+              {t('title')}
+              <span className="block text-[var(--color-brand-primary-500)]">{t('titleHighlight')}</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg sm:text-xl lg:text-2xl text-[var(--color-text-secondary)] mb-10 max-w-3xl mx-auto leading-relaxed">
-              Explore thousands of boats for sale, identify any vessel from a photo, 
-              and discover your dream boat with AI-powered search.
+              {t('subtitle')}
             </p>
 
             {/* CTA Buttons */}
@@ -48,7 +63,7 @@ export default function HomePage() {
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                 </svg>
-                Explore Boats
+                {t('cta.explore')}
               </Link>
               <Link
                 href="/snap"
@@ -58,7 +73,7 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
                 </svg>
-                Snap-to-ID
+                {t('cta.snap')}
               </Link>
             </div>
 
@@ -68,19 +83,19 @@ export default function HomePage() {
                 <svg className="w-5 h-5 text-[var(--color-success-500)]" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                Free to use
+                {t('trust.free')}
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-[var(--color-success-500)]" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                No account needed
+                {t('trust.noAccount')}
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-[var(--color-success-500)]" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                Instant results
+                {t('trust.instant')}
               </div>
             </div>
           </div>
@@ -92,10 +107,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-text-primary)] mb-4">
-              Everything you need
+              {t('features.title')}
             </h2>
             <p className="text-lg lg:text-xl text-[var(--color-text-secondary)] max-w-2xl mx-auto">
-              Discover boats, identify vessels, and find your perfect match
+              {t('features.subtitle')}
             </p>
           </div>
 
@@ -109,10 +124,10 @@ export default function HomePage() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-3 group-hover:text-[var(--color-brand-primary-600)] transition-colors">
-                  Explore Marketplace
+                  {t('features.explore.title')}
                 </h3>
                 <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                  Browse thousands of boats for sale on an interactive map. Filter by type, price, location, and more.
+                  {t('features.explore.description')}
                 </p>
               </div>
             </Link>
@@ -127,10 +142,10 @@ export default function HomePage() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-3 group-hover:text-[var(--color-brand-primary-600)] transition-colors">
-                  Snap-to-ID
+                  {t('features.snap.title')}
                 </h3>
                 <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                  Upload a photo of any boat and instantly identify the make, model, and specifications with AI.
+                  {t('features.snap.description')}
                 </p>
               </div>
             </Link>
@@ -145,14 +160,14 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-2 mb-3">
                   <h3 className="text-xl font-semibold text-[var(--color-text-primary)]">
-                    AI Assistant
+                    {t('features.ai.title')}
                   </h3>
                   <span className="px-2 py-0.5 text-xs font-medium text-[var(--color-text-tertiary)] bg-[var(--color-bg-muted)] rounded-full">
-                    Coming soon
+                    {t('features.ai.badge')}
                   </span>
                 </div>
                 <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                  Chat with our AI to get personalized boat recommendations based on your preferences.
+                  {t('features.ai.description')}
                 </p>
               </div>
             </div>
@@ -165,17 +180,17 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-[var(--color-brand-primary-500)] to-[var(--color-brand-primary-700)] rounded-3xl p-8 sm:p-12 lg:p-16 text-center">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
-              Ready to find your boat?
+              {t('ctaSection.title')}
             </h2>
             <p className="text-lg lg:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Start exploring the marketplace or use Snap-to-ID to identify any boat from a photo.
+              {t('ctaSection.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/explore"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-[var(--color-brand-primary-600)] bg-white hover:bg-white/90 rounded-xl transition-colors"
               >
-                Start exploring
+                {t('ctaSection.button')}
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
@@ -187,3 +202,4 @@ export default function HomePage() {
     </div>
   );
 }
+

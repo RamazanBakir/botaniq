@@ -2,12 +2,14 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { ListingWizard } from '@/components/listings/wizard';
 import type { ListingFormData } from '@/components/listings/wizard';
 
 export default function NewListingPage() {
   const router = useRouter();
+  const t = useTranslations('wizard');
   const [isComplete, setIsComplete] = useState(false);
 
   const handleComplete = (data: ListingFormData) => {
@@ -29,17 +31,17 @@ export default function NewListingPage() {
             </svg>
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold text-[var(--color-text-primary)] mb-4">
-            Listing created!
+            {t('success.title')}
           </h1>
           <p className="text-base text-[var(--color-text-secondary)] mb-8 leading-relaxed">
-            Your boat listing has been created successfully. It will be visible to buyers shortly.
+            {t('success.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/explore"
               className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-[var(--color-brand-primary-500)] hover:bg-[var(--color-brand-primary-600)] rounded-xl transition-colors"
             >
-              View listings
+              {t('success.viewListings')}
             </Link>
             <button
               onClick={() => {
@@ -47,7 +49,7 @@ export default function NewListingPage() {
               }}
               className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] bg-[var(--color-bg-surface)] border border-[var(--color-border-default)] hover:bg-[var(--color-bg-muted)] rounded-xl transition-colors"
             >
-              Create another
+              {t('success.createAnother')}
             </button>
           </div>
         </div>
@@ -71,10 +73,10 @@ export default function NewListingPage() {
             </button>
             <div className="flex-1 min-w-0">
               <h1 className="text-xl sm:text-2xl font-bold text-[var(--color-text-primary)]">
-                Create a boat listing
+                {t('title')}
               </h1>
               <p className="text-sm text-[var(--color-text-secondary)] mt-1">
-                List your boat for sale or charter
+                {t('subtitle')}
               </p>
             </div>
           </div>
@@ -88,3 +90,4 @@ export default function NewListingPage() {
     </div>
   );
 }
+

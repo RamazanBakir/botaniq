@@ -1,0 +1,437 @@
+{
+  "common": {
+    "brand": "botaniq",
+    "tagline": "AI-powered boat discovery",
+    "nav": {
+      "home": "Home",
+      "explore": "Explore",
+      "snap": "Snap-to-ID",
+      "sellBoat": "Sell a boat",
+      "createListing": "Create listing",
+      "admin": "Admin"
+    },
+    "buttons": {
+      "save": "Save",
+      "cancel": "Cancel",
+      "next": "Next",
+      "back": "Back",
+      "continue": "Continue",
+      "submit": "Submit",
+      "tryAgain": "Try again",
+      "learnMore": "Learn more",
+      "viewAll": "View all",
+      "close": "Close"
+    },
+    "footer": {
+      "copyright": "© {year} Botaniq",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    },
+    "language": {
+      "select": "Language",
+      "en": "English",
+      "tr": "Türkçe"
+    },
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email",
+      "minLength": "Must be at least {min} characters",
+      "maxLength": "Must be at most {max} characters"
+    }
+  },
+  "home": {
+    "badge": "AI-Powered Boat Discovery",
+    "title": "Find your perfect",
+    "titleHighlight": "boat",
+    "subtitle": "Explore thousands of boats for sale, identify any vessel from a photo, and discover your dream boat with AI-powered search.",
+    "cta": {
+      "explore": "Explore Boats",
+      "snap": "Snap-to-ID"
+    },
+    "trust": {
+      "free": "Free to use",
+      "noAccount": "No account needed",
+      "instant": "Instant results"
+    },
+    "features": {
+      "title": "Everything you need",
+      "subtitle": "Discover boats, identify vessels, and find your perfect match",
+      "explore": {
+        "title": "Explore Marketplace",
+        "description": "Browse thousands of boats for sale on an interactive map. Filter by type, price, location, and more."
+      },
+      "snap": {
+        "title": "Snap-to-ID",
+        "description": "Upload a photo of any boat and instantly identify the make, model, and specifications with AI."
+      },
+      "ai": {
+        "title": "AI Assistant",
+        "description": "Chat with our AI to get personalized boat recommendations based on your preferences.",
+        "badge": "Coming soon"
+      }
+    },
+    "ctaSection": {
+      "title": "Ready to find your boat?",
+      "subtitle": "Start exploring the marketplace or use Snap-to-ID to identify any boat from a photo.",
+      "button": "Start exploring"
+    }
+  },
+  "snap": {
+    "badge": "AI-Powered",
+    "title": "Snap-to-ID",
+    "subtitle": "Upload a photo of any boat to instantly identify its make, model, and specifications.",
+    "picker": {
+      "title": "Upload a boat photo",
+      "titleDragging": "Drop your image here",
+      "hint": "Drag and drop or click to browse",
+      "formats": "JPG, PNG or WebP · Max 10MB",
+      "mobileHint": "Tap to take a photo with your camera",
+      "errors": {
+        "invalidType": "Please select an image file (JPG, PNG, WebP)",
+        "tooLarge": "Image size must be less than 10MB"
+      }
+    },
+    "preview": {
+      "tip": "Make sure the boat is clearly visible for best results.",
+      "identify": "Identify this boat",
+      "chooseAnother": "Choose another",
+      "privacyNote": "Your photo is processed securely and won't be stored."
+    },
+    "processing": {
+      "title": "Analyzing your photo...",
+      "subtitle": "Our AI is identifying the boat. This may take a few seconds."
+    },
+    "results": {
+      "title": "Match found!",
+      "subtitle": "Here's what we identified from your photo.",
+      "bestMatch": "Best Match",
+      "alternatives": "Other possible matches",
+      "alternativeCount": "{count} alternative",
+      "alternativeCountPlural": "{count} alternatives",
+      "confidence": "Match Confidence",
+      "length": "Length",
+      "year": "Year",
+      "viewSimilar": "View similar boats for sale",
+      "notRight": "Not the right boat?",
+      "tryAnother": "Try another photo",
+      "feedback": "Give feedback"
+    },
+    "error": {
+      "title": "Something went wrong",
+      "subtitle": "We couldn't process your image. Please try again.",
+      "retry": "Try again"
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "step1": {
+        "title": "Upload a photo",
+        "description": "Take a picture or upload from your gallery"
+      },
+      "step2": {
+        "title": "AI analyzes the image",
+        "description": "Our AI scans the boat and matches it to our database"
+      },
+      "step3": {
+        "title": "Get instant results",
+        "description": "View matches with confidence scores and specifications"
+      }
+    },
+    "tips": {
+      "title": "Tips for best results",
+      "lighting": "Ensure good lighting and avoid harsh shadows",
+      "profile": "Capture the full side profile of the boat if possible",
+      "blur": "Avoid blurry images for more accurate results",
+      "resolution": "Higher resolution photos provide better accuracy"
+    },
+    "privacy": {
+      "title": "Your privacy matters",
+      "description": "Images are processed securely and not stored after analysis."
+    }
+  },
+  "explore": {
+    "title": "Explore Boats",
+    "subtitle": "{count} boats available",
+    "views": {
+      "grid": "Grid",
+      "map": "Map"
+    },
+    "filters": {
+      "title": "Filters",
+      "type": "Boat Type",
+      "allTypes": "All Types",
+      "priceRange": "Price Range",
+      "allPrices": "All Prices",
+      "location": "Location",
+      "allLocations": "All Locations",
+      "reset": "Reset filters"
+    },
+    "empty": {
+      "title": "No results found",
+      "description": "No boats match your search."
+    },
+    "card": {
+      "featured": "Featured",
+      "new": "New",
+      "preOwned": "Pre-owned"
+    }
+  },
+  "listing": {
+    "breadcrumb": "Explore",
+    "notFound": "Listing Not Found",
+    "badges": {
+      "new": "New",
+      "featured": "Featured"
+    },
+    "sections": {
+      "description": "Description",
+      "specifications": "Specifications"
+    },
+    "actions": {
+      "save": "Save",
+      "share": "Share",
+      "report": "Report"
+    },
+    "safety": {
+      "title": "Safety Tips",
+      "description": "Always inspect the boat in person before making a purchase. Verify all documentation and consider a marine survey."
+    },
+    "seller": {
+      "title": "Contact Seller",
+      "verified": "Verified Seller",
+      "memberSince": "Member since {year}",
+      "responseTime": "Usually responds within {time}",
+      "call": "Call",
+      "message": "Send Message"
+    },
+    "specs": {
+      "length": "Length",
+      "beam": "Beam",
+      "draft": "Draft",
+      "engines": "Engines",
+      "fuelType": "Fuel Type",
+      "hullMaterial": "Hull Material",
+      "cabins": "Cabins",
+      "berths": "Berths"
+    }
+  },
+  "wizard": {
+    "title": "Create a boat listing",
+    "subtitle": "List your boat for sale or charter",
+    "cancelText": "Cancel and go back",
+    "steps": {
+      "basics": {
+        "title": "Boat basics",
+        "description": "Type, brand, model"
+      },
+      "location": {
+        "title": "Location",
+        "description": "Where is the boat"
+      },
+      "photos": {
+        "title": "Photos",
+        "description": "Add images"
+      },
+      "pricing": {
+        "title": "Pricing",
+        "description": "Set your price"
+      },
+      "summary": {
+        "title": "Review",
+        "description": "Confirm details"
+      }
+    },
+    "basics": {
+      "title": "Tell us about your boat",
+      "subtitle": "Start with the basic information about your vessel.",
+      "boatType": "Boat Type",
+      "selectType": "Select boat type",
+      "brand": "Brand",
+      "brandPlaceholder": "e.g., Azimut, Sunseeker",
+      "model": "Model",
+      "modelPlaceholder": "e.g., Flybridge 60",
+      "year": "Year",
+      "yearPlaceholder": "e.g., 2020",
+      "length": "Length (ft)",
+      "lengthPlaceholder": "e.g., 60",
+      "condition": "Condition",
+      "conditionNew": "New",
+      "conditionUsed": "Used"
+    },
+    "location": {
+      "title": "Where is your boat located?",
+      "subtitle": "This helps buyers find your listing.",
+      "country": "Country",
+      "selectCountry": "Select country",
+      "city": "City / Port",
+      "cityPlaceholder": "e.g., Monaco, Miami",
+      "marina": "Marina (optional)",
+      "marinaPlaceholder": "e.g., Port Hercule"
+    },
+    "photos": {
+      "title": "Add photos of your boat",
+      "subtitle": "High-quality photos help your listing stand out.",
+      "upload": "Upload Photos",
+      "uploadHint": "Click or drag photos here",
+      "formats": "JPG, PNG or WebP · Max 10MB each",
+      "uploaded": "{count} photo uploaded",
+      "uploadedPlural": "{count} photos uploaded",
+      "remove": "Remove"
+    },
+    "pricing": {
+      "title": "Set your price",
+      "subtitle": "Choose how you want to sell your boat.",
+      "price": "Asking Price",
+      "pricePlaceholder": "e.g., 500000",
+      "currency": "Currency",
+      "saleType": "Sale Type",
+      "forSale": "For Sale",
+      "forCharter": "For Charter",
+      "negotiable": "Price is negotiable",
+      "notes": "Additional notes (optional)",
+      "notesPlaceholder": "Any additional information for buyers..."
+    },
+    "summary": {
+      "title": "Review your listing",
+      "subtitle": "Make sure everything looks correct before publishing.",
+      "edit": "Edit",
+      "boatDetails": "Boat Details",
+      "locationDetails": "Location",
+      "pricingDetails": "Pricing"
+    },
+    "success": {
+      "title": "Listing created!",
+      "subtitle": "Your boat listing has been created successfully. It will be visible to buyers shortly.",
+      "viewListings": "View listings",
+      "createAnother": "Create another"
+    },
+    "footer": {
+      "back": "Back",
+      "continue": "Continue",
+      "createListing": "Create listing",
+      "creating": "Creating..."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to your account to continue",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "submit": "Sign in",
+      "noAccount": "Don't have an account?",
+      "register": "Create account"
+    },
+    "register": {
+      "title": "Create an account",
+      "subtitle": "Join Botaniq to list and discover boats",
+      "name": "Full name",
+      "namePlaceholder": "John Doe",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "Create a password",
+      "confirmPassword": "Confirm password",
+      "confirmPasswordPlaceholder": "Confirm your password",
+      "terms": "I agree to the Terms of Service and Privacy Policy",
+      "submit": "Create account",
+      "hasAccount": "Already have an account?",
+      "login": "Sign in"
+    },
+    "forgotPassword": {
+      "title": "Reset your password",
+      "subtitle": "Enter your email and we'll send you a reset link",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "submit": "Send reset link",
+      "backToLogin": "Back to sign in",
+      "success": {
+        "title": "Check your email",
+        "subtitle": "We've sent a password reset link to {email}"
+      }
+    },
+    "errors": {
+      "invalidCredentials": "Invalid email or password",
+      "emailInUse": "This email is already registered",
+      "weakPassword": "Password must be at least 8 characters",
+      "passwordMismatch": "Passwords do not match"
+    }
+  },
+  "admin": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "listings": "Listings",
+      "users": "Users"
+    },
+    "listings": {
+      "title": "Listings Moderation",
+      "subtitle": "Review and manage boat listings",
+      "stats": {
+        "total": "Total Listings",
+        "pending": "Pending Review",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      },
+      "table": {
+        "id": "ID",
+        "title": "Title",
+        "owner": "Owner",
+        "status": "Status",
+        "date": "Date",
+        "actions": "Actions"
+      },
+      "status": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      },
+      "actions": {
+        "approve": "Approve",
+        "reject": "Reject",
+        "view": "View"
+      },
+      "empty": {
+        "title": "No listings to review",
+        "subtitle": "All listings have been moderated."
+      }
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "Botaniq – AI-powered boat discovery and marketplace",
+      "description": "Explore thousands of boats for sale, identify vessels from photos with AI, and find your dream boat on Botaniq."
+    },
+    "snap": {
+      "title": "Snap-to-ID | Botaniq – Identify boats from a photo",
+      "description": "Use Botaniq's Snap-to-ID feature to identify boats from a simple photo and discover similar yachts."
+    },
+    "explore": {
+      "title": "Explore Boats | Botaniq",
+      "description": "Browse boats on an interactive map. Filter by type, price, location, and more. Find your perfect vessel today."
+    },
+    "listing": {
+      "title": "{brand} {model} – For Sale | Botaniq",
+      "description": "{year} {brand} {model} for sale. {length}ft {type}."
+    },
+    "wizard": {
+      "title": "Create a Listing | Botaniq",
+      "description": "List your boat for sale or charter on Botaniq marketplace."
+    },
+    "login": {
+      "title": "Sign In | Botaniq",
+      "description": "Sign in to your Botaniq account."
+    },
+    "register": {
+      "title": "Create Account | Botaniq",
+      "description": "Join Botaniq to list and discover boats."
+    },
+    "admin": {
+      "title": "Admin | Botaniq",
+      "description": "Botaniq administration panel."
+    }
+  }
+}
+

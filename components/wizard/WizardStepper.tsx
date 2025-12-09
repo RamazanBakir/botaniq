@@ -50,29 +50,30 @@ export function WizardStepper({
       {/* Desktop: Full stepper with labels */}
       <div className="hidden lg:block">
         <nav aria-label="Progress">
-          <ol className="flex items-start justify-between">
+          <ol className="flex items-center">
             {steps.map((step, index) => {
               const isCompleted = index < currentStep;
               const isCurrent = index === currentStep;
               const isClickable = allowNavigation && isCompleted;
+              const isLast = index === steps.length - 1;
 
               return (
-                <li key={step.id} className="flex-1 relative">
-                  <div className="flex flex-col items-center text-center">
+                <li key={step.id} className={`flex items-center ${isLast ? '' : 'flex-1'}`}>
+                  <div className="flex flex-col items-center">
                     {/* Step Circle */}
                     <button
                       type="button"
                       onClick={() => handleStepClick(index)}
                       disabled={!isClickable}
                       className={`
-                        relative z-10 flex items-center justify-center w-10 h-10 rounded-full
+                        flex items-center justify-center w-10 h-10 rounded-full
                         font-semibold text-sm transition-all duration-200
                         ${
                           isCompleted
                             ? 'bg-[var(--color-brand-primary-500)] text-white'
                             : isCurrent
-                            ? 'bg-[var(--color-brand-primary-100)] text-[var(--color-brand-primary-700)] border-2 border-[var(--color-brand-primary-500)]'
-                            : 'bg-[var(--color-bg-muted)] text-[var(--color-text-tertiary)] border-2 border-[var(--color-border-default)]'
+                            ? 'bg-[var(--color-brand-primary-100)] text-[var(--color-brand-primary-700)] ring-2 ring-[var(--color-brand-primary-500)]'
+                            : 'bg-[var(--color-bg-muted)] text-[var(--color-text-tertiary)]'
                         }
                         ${isClickable ? 'cursor-pointer hover:opacity-80' : 'cursor-default'}
                       `}
@@ -91,9 +92,9 @@ export function WizardStepper({
                     </button>
 
                     {/* Step Label */}
-                    <div className="mt-3 max-w-[120px]">
+                    <div className="mt-2 text-center">
                       <p
-                        className={`text-sm font-medium leading-tight ${
+                        className={`text-xs font-medium ${
                           isCurrent
                             ? 'text-[var(--color-brand-primary-600)]'
                             : isCompleted
@@ -103,21 +104,14 @@ export function WizardStepper({
                       >
                         {step.title}
                       </p>
-                      {step.description && (
-                        <p className="mt-1 text-xs text-[var(--color-text-tertiary)] leading-tight">
-                          {step.description}
-                        </p>
-                      )}
                     </div>
                   </div>
 
                   {/* Connector Line */}
-                  {index !== steps.length - 1 && (
-                    <div
-                      className="absolute top-5 left-[calc(50%+20px)] right-[calc(-50%+20px)] h-0.5"
-                    >
+                  {!isLast && (
+                    <div className="flex-1 mx-3">
                       <div
-                        className={`h-full transition-all duration-300 ${
+                        className={`h-0.5 w-full transition-all duration-300 ${
                           isCompleted
                             ? 'bg-[var(--color-brand-primary-500)]'
                             : 'bg-[var(--color-border-default)]'

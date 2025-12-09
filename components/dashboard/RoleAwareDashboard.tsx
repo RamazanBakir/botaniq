@@ -61,7 +61,7 @@ export function RoleAwareDashboard() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/login"
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-[var(--color-brand-primary-500)] hover:bg-[var(--color-brand-primary-600)] rounded-xl transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold !text-white bg-[var(--color-brand-primary-500)] hover:bg-[var(--color-brand-primary-600)] rounded-xl transition-colors"
             >
               {t('notAuthenticated.login')}
             </Link>

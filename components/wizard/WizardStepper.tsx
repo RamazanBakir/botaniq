@@ -70,7 +70,7 @@ export function WizardStepper({
                         font-semibold text-sm transition-all duration-200
                         ${
                           isCompleted
-                            ? 'bg-[var(--color-brand-primary-500)] text-white'
+                            ? 'bg-[var(--color-brand-primary-500)] !text-white'
                             : isCurrent
                             ? 'bg-[var(--color-brand-primary-100)] text-[var(--color-brand-primary-700)] ring-2 ring-[var(--color-brand-primary-500)]'
                             : 'bg-[var(--color-bg-muted)] text-[var(--color-text-tertiary)]'

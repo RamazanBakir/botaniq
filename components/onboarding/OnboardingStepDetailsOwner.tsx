@@ -142,7 +142,7 @@ export function OnboardingStepDetailsOwner({
                     w-14 h-14 rounded-xl border text-center font-semibold transition-all
                     ${
                       isSelected
-                        ? 'border-[var(--color-brand-primary-500)] bg-[var(--color-brand-primary-500)] text-white'
+                        ? 'border-[var(--color-brand-primary-500)] bg-[var(--color-brand-primary-500)] !text-white'
                         : 'border-[var(--color-border-default)] hover:border-[var(--color-border-strong)] text-[var(--color-text-primary)]'
                     }
                   `}
@@ -224,7 +224,7 @@ export function OnboardingStepDetailsOwner({
         <button
           type="button"
           onClick={onNext}
-          className="flex-1 py-3 px-6 rounded-xl font-semibold text-base bg-[var(--color-brand-primary-500)] text-white hover:bg-[var(--color-brand-primary-600)] transition-all"
+          className="flex-1 py-3 px-6 rounded-xl font-semibold text-base bg-[var(--color-brand-primary-500)] !text-white hover:bg-[var(--color-brand-primary-600)] transition-all"
         >
           {t('onboarding.buttons.continue')}
         </button>

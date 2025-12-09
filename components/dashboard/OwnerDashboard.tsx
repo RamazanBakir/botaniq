@@ -93,7 +93,7 @@ export function OwnerDashboard({ userName }: OwnerDashboardProps) {
   const primaryAction = (
     <Link
       href="/listings/new"
-      className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-semibold text-white bg-[var(--color-brand-primary-500)] hover:bg-[var(--color-brand-primary-600)] rounded-xl shadow-sm hover:shadow-md transition-all"
+      className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-semibold !text-white bg-[var(--color-brand-primary-500)] hover:bg-[var(--color-brand-primary-600)] rounded-xl shadow-sm hover:shadow-md transition-all"
     >
       <PlusIcon className="w-5 h-5" />
       {t('cta.createListing')}

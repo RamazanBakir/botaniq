@@ -127,7 +127,7 @@ export function OnboardingStepUsage({
                     flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center
                     ${
                       isSelected
-                        ? 'bg-[var(--color-brand-primary-500)] text-white'
+                        ? 'bg-[var(--color-brand-primary-500)] !text-white'
                         : 'bg-[var(--color-bg-muted)] text-[var(--color-text-secondary)]'
                     }
                   `}
@@ -186,7 +186,7 @@ export function OnboardingStepUsage({
             w-full py-3 px-6 rounded-xl font-semibold text-base transition-all
             ${
               state.selectedUsage
-                ? 'bg-[var(--color-brand-primary-500)] text-white hover:bg-[var(--color-brand-primary-600)]'
+                ? 'bg-[var(--color-brand-primary-500)] !text-white hover:bg-[var(--color-brand-primary-600)]'
                 : 'bg-[var(--color-bg-muted)] text-[var(--color-text-tertiary)] cursor-not-allowed'
             }
           `}

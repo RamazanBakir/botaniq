@@ -199,7 +199,7 @@ export function OnboardingStepDetailsCharter({
         <button
           type="button"
           onClick={onNext}
-          className="flex-1 py-3 px-6 rounded-xl font-semibold text-base bg-[var(--color-brand-primary-500)] text-white hover:bg-[var(--color-brand-primary-600)] transition-all"
+          className="flex-1 py-3 px-6 rounded-xl font-semibold text-base bg-[var(--color-brand-primary-500)] !text-white hover:bg-[var(--color-brand-primary-600)] transition-all"
         >
           {t('onboarding.buttons.continue')}
         </button>

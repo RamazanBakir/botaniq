@@ -143,7 +143,7 @@ export function StepPhotos({ data, onChange, errors = {} }: StepPhotosProps) {
                     onClick={() => handleSetPrimary(photo.id)}
                     className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
                       photo.isPrimary
-                        ? 'bg-[var(--color-brand-primary-500)] text-white'
+                        ? 'bg-[var(--color-brand-primary-500)] !text-white'
                         : 'bg-white/90 text-[var(--color-text-secondary)] hover:text-[var(--color-brand-primary-500)]'
                     }`}
                     title="Set as primary"
@@ -168,7 +168,7 @@ export function StepPhotos({ data, onChange, errors = {} }: StepPhotosProps) {
 
                 {/* Primary Badge */}
                 {photo.isPrimary && (
-                  <div className="absolute top-2 left-2 px-2 py-1 text-xs font-medium text-white bg-[var(--color-brand-primary-500)] rounded-md">
+                  <div className="absolute top-2 left-2 px-2 py-1 text-xs font-medium !text-white bg-[var(--color-brand-primary-500)] rounded-md">
                     Primary
                   </div>
                 )}

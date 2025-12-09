@@ -186,7 +186,7 @@ export function OnboardingStepCompleted({
         <button
           type="button"
           onClick={onComplete}
-          className="w-full py-3 px-6 rounded-xl font-semibold text-base bg-[var(--color-brand-primary-500)] text-white hover:bg-[var(--color-brand-primary-600)] transition-all"
+          className="w-full py-3 px-6 rounded-xl font-semibold text-base bg-[var(--color-brand-primary-500)] !text-white hover:bg-[var(--color-brand-primary-600)] transition-all"
         >
           {primaryAction.label}
         </button>

@@ -129,7 +129,7 @@ export default function FleetPage() {
             </Link>
             <Link
               href="/listings/new"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-[var(--color-brand-primary-500)] hover:bg-[var(--color-brand-primary-600)] rounded-xl transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold !text-white bg-[var(--color-brand-primary-500)] hover:bg-[var(--color-brand-primary-600)] rounded-xl transition-colors"
             >
               <PlusIcon className="w-5 h-5" />
               {t('addBoat')}

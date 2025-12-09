@@ -37,7 +37,7 @@ export function SnapImagePreview({ previewUrl, onConfirm, onChangeImage }: SnapI
       <div className="flex flex-col sm:flex-row gap-3">
         <button
           onClick={onConfirm}
-          className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-[var(--color-brand-primary-500)] hover:bg-[var(--color-brand-primary-600)] rounded-xl transition-colors"
+          className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold !text-white bg-[var(--color-brand-primary-500)] hover:bg-[var(--color-brand-primary-600)] rounded-xl transition-colors"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />

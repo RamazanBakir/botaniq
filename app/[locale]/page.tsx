@@ -58,7 +58,7 @@ function HomePageContent() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/explore"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-[var(--color-brand-primary-500)] hover:bg-[var(--color-brand-primary-600)] rounded-xl shadow-lg shadow-[var(--color-brand-primary-500)]/20 hover:shadow-xl transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold !text-white bg-[var(--color-brand-primary-500)] hover:bg-[var(--color-brand-primary-600)] rounded-xl shadow-lg shadow-[var(--color-brand-primary-500)]/20 hover:shadow-xl transition-all duration-200"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />

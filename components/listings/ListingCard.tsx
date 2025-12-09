@@ -44,7 +44,7 @@ export function ListingCard({ listing, variant = 'vertical' }: ListingCardProps)
           {/* Badges */}
           <div className="absolute top-3 left-3 flex flex-wrap gap-2">
             {listing.featured && (
-              <span className="px-2 py-1 text-xs font-semibold text-white bg-[var(--color-brand-primary-500)] rounded-md">
+              <span className="px-2 py-1 text-xs font-semibold !text-white bg-[var(--color-brand-primary-500)] rounded-md">
                 Featured
               </span>
             )}

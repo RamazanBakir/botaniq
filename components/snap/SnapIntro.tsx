@@ -85,7 +85,7 @@ export function SnapIntro({ onStart }: SnapIntroProps) {
             bg-[var(--color-brand-primary-500)]
             hover:bg-[var(--color-brand-primary-600)]
             active:bg-[var(--color-brand-primary-700)]
-            text-white font-semibold
+            !text-white font-semibold
             rounded-[var(--radius-xl)]
             transition-all duration-[var(--transition-normal)]
             shadow-md hover:shadow-lg

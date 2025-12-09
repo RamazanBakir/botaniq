@@ -89,7 +89,7 @@ function ListingDetailContent({ listing }: { listing: NonNullable<ReturnType<typ
                       </span>
                     )}
                     {listing.featured && (
-                      <span className="px-3 py-1 text-xs font-semibold text-white bg-[var(--color-brand-primary-500)] rounded-full">
+                      <span className="px-3 py-1 text-xs font-semibold !text-white bg-[var(--color-brand-primary-500)] rounded-full">
                         {t('badges.featured')}
                       </span>
                     )}

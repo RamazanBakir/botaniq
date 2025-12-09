@@ -22,7 +22,7 @@ export function SnapResultCard({ prediction, isPrimary = false }: SnapResultCard
     `}>
       {/* Primary Badge */}
       {isPrimary && (
-        <div className="absolute top-0 right-0 px-3 py-1 text-xs font-semibold text-white bg-[var(--color-brand-primary-500)] rounded-bl-xl">
+        <div className="absolute top-0 right-0 px-3 py-1 text-xs font-semibold !text-white bg-[var(--color-brand-primary-500)] rounded-bl-xl">
           Best Match
         </div>
       )}

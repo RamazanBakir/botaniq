@@ -1,0 +1,6 @@
+/**
+ * Global Styles Entry Point
+ * 
+ * Re-exports from the styles directory for simpler imports.
+ */
+@import "../styles/globals.css";

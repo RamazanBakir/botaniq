@@ -1,0 +1,26 @@
+# Dependencies
+node_modules
+
+# Build outputs
+.next
+out
+dist
+build
+
+# Cache
+.cache
+
+# Generated files
+*.lock
+package-lock.json
+
+# Environment files
+.env*
+
+# IDE
+.idea
+.vscode
+
+# OS files
+.DS_Store
+

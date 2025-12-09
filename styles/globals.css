@@ -1,0 +1,184 @@
+/**
+ * Global Styles
+ * 
+ * Main CSS entry point for the Botaniq application.
+ * Imports Tailwind and design system CSS variables.
+ */
+
+/* Import Tailwind CSS v4 */
+@import "tailwindcss";
+
+/* Import design system CSS variables */
+@import "../design-system/theme/css-variables.css";
+
+/* ========================================
+   Tailwind v4 Theme Configuration
+   
+   Maps CSS variables to Tailwind utilities
+   ======================================== */
+@theme inline {
+  /* Colors - Brand */
+  --color-brand-50: var(--color-brand-primary-50);
+  --color-brand-100: var(--color-brand-primary-100);
+  --color-brand-200: var(--color-brand-primary-200);
+  --color-brand-300: var(--color-brand-primary-300);
+  --color-brand-400: var(--color-brand-primary-400);
+  --color-brand-500: var(--color-brand-primary-500);
+  --color-brand-600: var(--color-brand-primary-600);
+  --color-brand-700: var(--color-brand-primary-700);
+  --color-brand-800: var(--color-brand-primary-800);
+  --color-brand-900: var(--color-brand-primary-900);
+
+  /* Colors - Semantic Backgrounds */
+  --color-canvas: var(--color-bg-canvas);
+  --color-surface: var(--color-bg-surface);
+  --color-muted: var(--color-bg-muted);
+  --color-elevated: var(--color-bg-elevated);
+
+  /* Colors - Text */
+  --color-foreground: var(--color-text-primary);
+  --color-foreground-secondary: var(--color-text-secondary);
+  --color-foreground-tertiary: var(--color-text-tertiary);
+  --color-foreground-inverse: var(--color-text-inverse);
+  --color-link: var(--color-text-link);
+
+  /* Colors - Border */
+  --color-border: var(--color-border-default);
+  --color-border-muted: var(--color-border-muted);
+  --color-border-strong: var(--color-border-strong);
+
+  /* Colors - Feedback */
+  --color-success: var(--color-success-500);
+  --color-warning: var(--color-warning-500);
+  --color-error: var(--color-error-500);
+  --color-info: var(--color-info-500);
+
+  /* Typography - Fonts */
+  --font-sans: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
+
+  /* Typography - Font Sizes */
+  --text-display: var(--font-size-display);
+  --text-h1: var(--font-size-h1);
+  --text-h2: var(--font-size-h2);
+  --text-h3: var(--font-size-h3);
+  --text-h4: var(--font-size-h4);
+  --text-body: var(--font-size-body);
+  --text-small: var(--font-size-small);
+  --text-caption: var(--font-size-caption);
+
+  /* Spacing */
+  --spacing-xs: var(--spacing-xs);
+  --spacing-sm: var(--spacing-sm);
+  --spacing-md: var(--spacing-md);
+  --spacing-lg: var(--spacing-lg);
+  --spacing-xl: var(--spacing-xl);
+  --spacing-2xl: var(--spacing-2xl);
+  --spacing-3xl: var(--spacing-3xl);
+  --spacing-4xl: var(--spacing-4xl);
+
+  /* Border Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-3xl: var(--radius-3xl);
+  --radius-full: var(--radius-full);
+
+  /* Shadows */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+}
+
+/* ========================================
+   Base Styles & Resets
+   ======================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--color-bg-canvas);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+/* ========================================
+   Typography Resets
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+}
+
+p {
+  margin: 0;
+}
+
+/* ========================================
+   Link Styles
+   ======================================== */
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   Focus Styles (Accessibility)
+   ======================================== */
+:focus-visible {
+  outline: 2px solid var(--color-brand-primary-500);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Selection Styles
+   ======================================== */
+::selection {
+  background-color: var(--color-brand-primary-200);
+  color: var(--color-brand-primary-900);
+}
+
+/* ========================================
+   Scrollbar Styles (optional, webkit)
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-400);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neutral-500);
+}
+
